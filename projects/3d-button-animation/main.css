@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Ubuntu&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f2f5f5;
+    font-family: 'Mulish', sans-serif;
+}
+
+.container {
+    height: 100%;
+    position: relative;
+    perspective: 800px;
+}
+
+.btn {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    transform-style: preserve-3d;
+    outline: 1px solid transparent;
+    transition: all .5s ease-out;
+    background-color: #121212;
+    letter-spacing: 2px;
+    border-radius: 3px;
+    padding: 15px 20px;
+    color: #fefefe;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    width: 250px;
+}
+
+.btn::after {
+    content: "Button";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 210px;
+    padding: 15px 20px;
+    border-radius: 3px;
+    display: inline-block;
+    transform: rotateX(89.9deg); 
+    transform-origin: 50% 100%; 
+    background-color: #121212;
+    transition: all .5s ease-out;
+}
+
+.btn:hover {
+    transform: translateY(40px) rotateX(-90deg);
+}
