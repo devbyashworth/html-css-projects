@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Montserrat&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    min-height: 100vh;
+    background-color: #e0e0e0;
+    font-family: "Montserrat", sans-serif;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 1.5rem;
+    padding: 1rem 2.5rem;
+    position: relative;
+    font-size: 1.1rem;
+    font-weight: bold;
+    overflow: hidden;
+    border: none;
+    gap: .5rem;
+}
+
+button span {
+    z-index: 3;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+button .icon {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    z-index: 3;
+}
+
+button .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: all .5s ease-in;
+    background-color: chartreuse;
+    clip-path: circle(12% at 79% 49%);
+}
+
+button .overlay:hover {
+    cursor: pointer;
+    clip-path: circle(120% at 76% 49%);
+}
