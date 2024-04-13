@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f2f5f5;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    min-width: 250px;
+    min-height: 350px;
+    border-radius: 3px;
+    background: linear-gradient(43deg, #ff512f 0%, #dd2476 45%, #1c64ff 100%);
+    overflow: hidden;
+    transition: transform 0.25s ease-in-out;
+}
+
+.card::before,
+.card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transition: border .25s;
+}
+
+.card::before {
+    border-style: solid;
+    border-width: 0 0 50px 50px;
+    border-color: transparent transparent white transparent;
+}
+
+.card::after {
+    content: "GO";
+    bottom: 15px;
+    right: 15px;
+    opacity: 0;
+    font-size: 20px;
+    color: #151515;
+    transition: opacity .5s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card:hover::before {
+    border-width: 0 0 100px 100px;
+}
+
+.card:hover::after {
+    opacity: 1;
+}
+
+.card_title {
+    margin: auto;
+    font-size: 20px;
+    color: #fefefe;
+    z-index: 1;
+}
