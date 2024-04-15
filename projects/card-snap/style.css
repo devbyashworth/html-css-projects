@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #1b1b1b;
+    font-family: "Manrope", sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    max-width: 24rem;
+    gap: 1.5rem;
+    scroll-snap-type: x mandatory;
+}
+
+.container .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+    border-radius: 1rem;
+    min-height: 24rem;
+    min-width: 24rem;
+    font-weight: 600;
+    color: #fefefe;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.card:nth-child(1) { background-image: linear-gradient(to bottom, #9377f2, #6250d7); }
+.card:nth-child(2) { background-image: linear-gradient(to bottom, #e5866c, #df795d); }
+.card:nth-child(3) { background-image: linear-gradient(to bottom, #5866e4, #4d5ad9); }
+.card:nth-child(4) { background-image: linear-gradient(to bottom, #97bf42, #75aa29); }
+.card:nth-child(5) { background-image: linear-gradient(to bottom, #9377f0, #6250d5); }
+
+.container::-webkit-scrollbar { height: 0.7rem; }
+.container::-webkit-scrollbar-track {
+    border-radius: 40rem;
+    background-color: #313852;
+}
+.container::-webkit-scrollbar-thumb {
+    border-radius: 40rem;
+    background-color: #fefefe;
+}
