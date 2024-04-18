@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&family=Ubuntu&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    color: #f2f5f5;
+    background-color: #0a050b;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+#menu {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.menu-list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+}
+
+.menu-list a {
+    z-index: 2;
+    color: inherit;
+    font-size: 2rem;
+    font-weight: 600;
+    transition: 250ms;
+    text-decoration: none;
+}
+
+.menu-list:hover a:not(:hover) {
+    opacity: .3;
+}
+
+.menu-list a::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    letter-spacing: 5rem;
+    font-weight: 700;
+    font-size: 3em;
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+    transition: .5s ease;
+    color: hsla(0, 0%, 100%, .1);
+}
+
+.menu-list a:hover::before {
+    opacity: 1;
+    letter-spacing: 1rem;
+}
+
+.menu-list a:nth-child(1)::before { color: hsla(267, 60%, 76%, .4); }
+.menu-list a:nth-child(2)::before { color: hsla(174, 60%, 43%, .4); }
+.menu-list a:nth-child(3)::before { color: hsla(258, 52%, 35%, .4); }
+.menu-list a:nth-child(4)::before { color: hsla(349, 52%, 61%, .4); }
+.menu-list a:nth-child(5)::before { color: hsla(29, 71%, 70%, .3); }
