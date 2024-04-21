@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #000000;
+    font-family: "Montserrat", sans-serif;
+}
+
+.reflect {
+    position: relative;
+    color: #f2f5f5;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.reflect::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 0.95em;
+    transform-origin: bottom;
+    transform: rotateX(180deg);
+    background: linear-gradient(0deg, #f2f5f5, transparent 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
