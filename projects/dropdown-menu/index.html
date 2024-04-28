@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header class="menu_wrapper">
+        <div class="menu_logo">
+            <a href="#" title="Home" aria-label="home" class="logo">LOGO</a>
+        </div>
+        <div class="menu_bar">
+            <nav>
+                <ul class="navigation hide">
+                    <li>
+                        <button>Features</button>
+                        <div class="dropdown_wrapper">
+                            <div class="dropdown_container">
+                                <ul class="dropdown_menu">
+                                    <li>
+                                        <div class="item_title">
+                                            <h3>Previews</h3>
+                                            <p>Zero config, more innovation.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item_title">
+                                            <h3>HTML</h3>
+                                            <p>Standard markup language for Web pages.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item_title">
+                                            <h3>CSS</h3>
+                                            <p>Used to style an HTML document.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item_title">
+                                            <h3>Next js</h3>
+                                            <p>The native Next.js platform.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item_title">
+                                            <h3>React js</h3>
+                                            <p>Javascript library for building user interfaces.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item_title">
+                                            <h3>Python</h3>
+                                            <p>Used to build websites and software, automate tasks, and conduct data analysis.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#about" title="About">About</a>
+                    </li>
+                    <li>
+                        <a href="#docs" title="Docs">Docs</a>
+                    </li>
+                    <li>
+                        <a href="#templates" title="Templates">Templates</a>
+                    </li>
+                    <li>
+                        <a href="#pricing" title="Pricing">Pricing</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="action_buttons hide">
+            <a href="#log-in" class="secondary" title="Log in">Log In</a>
+            <a href="#sign-up" class="primary" title="Sign up">Sign Up</a>
+        </div>
+        <button type="button" class="burger_menu" aria-label="Open menu">
+            <span class="fas fa-bars"></span>
+        </button>
+        
+    </header>
+</body>
+</html>
