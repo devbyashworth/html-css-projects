@@ -1,0 +1,88 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Poppins&display=swap');
+
+/* Apply styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #f2f5f5;
+    background-color: #1f2023;
+    font-family: "Poppins", sans-serif;
+}
+
+.expandable-container {
+    width: 450px;
+}
+
+.check-input {
+    display: none;
+}
+
+.expandable .header-container {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    cursor: pointer;
+    background-color: #313237;
+    transition: background-color 0.3s ease;
+}
+
+.header {
+    flex: 1;
+}
+
+.title {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.sub-title {
+    font-size: 0.9rem;
+    color: #aaaaaa;
+}
+
+.icon {
+    width: 15px;
+    height: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #b6b6b6;
+    transition: all 0.3s ease;
+}
+
+.icon::before {
+    content: "";
+    width: 2px;
+    height: 15px;
+    background-color: #b6b6b6;
+    transition: all 0.3s ease;
+}
+
+.check-input:checked + label .icon::before {
+    opacity: 0;
+}
+
+.expandable .content {
+    opacity: 0;
+    height: 0;
+    padding: 1rem;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    background-color: #3a3a42;
+}
+
+.check-input:checked + label .content {
+    opacity: 1;
+    height: auto;
+    visibility: visible;
+}
