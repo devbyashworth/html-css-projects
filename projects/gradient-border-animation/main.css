@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e0e0e0;
+}
+
+
+.card {
+    width: 250px;
+    height: 300px;
+    border: 2px solid;
+    background-color: #cccccc;
+    border-image: linear-gradient(#ff512f, #dd2476, #1c64ff) 1;
+    animation: rotate 2.5s ease-in infinite;
+}
+
+.card figcaption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    text-align: center;
+    color: #121212;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
+@keyframes rotate {
+    50% {
+        border-image: linear-gradient(#ff512f, #dd2476, #1c64ff) 1;
+    }
+}
