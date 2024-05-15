@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #e0e0e0;
+    font-family: "Montserrat", sans-serif;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group .input {
+    border: none;
+    width: 185px;
+    outline: none;
+    display: block;
+    font-size: 16px;
+    padding: 10px 0;
+    color: #fefefe;
+    transition: all 0.2s ease;
+    background-color: transparent;
+    border-bottom: 1px solid #6c6c6c;
+}
+
+.input-group label {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    font-size: 18px;
+    color: #999999;
+    font-weight: normal;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input:focus ~ label,
+.input:valid ~ label {
+    bottom: 100%;
+    font-size: 14px;
+    color: #0e94f4;
+}
+
+.input-group .bar {
+    width: 200px;
+    display: block;
+    position: relative;
+}
+
+.input-group .bar::before,
+.input-group .bar::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #0e94f4;
+    transition: all 0.3s ease;
+}
+
+.input-group .bar::before {
+    left: 50%;
+}
+
+.input-group .bar::after {
+    right: 50%;
+}
+
+.input:focus ~ .bar::before,
+.input:focus ~ .bar::after {
+    width: 50%;
+}
+
+.highlight {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    width: 0;
+    height: 60%;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.input:focus ~ .highlight {
+    animation: input-focus 0.5s ease .3s;
+}
+
+@keyframes input-focus {
+    from {
+        background-color: #1486d7;
+    }
+    to {
+        width: 185px;
+        background-color: transparent;
+    }
+}
