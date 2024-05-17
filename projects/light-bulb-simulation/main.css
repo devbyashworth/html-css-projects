@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4e648a;
+    font-family: "Poppins", sans-serif;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -4rem;
+    height: 100vh;
+}
+
+.wire {
+    height: 50%;
+    z-index: -1;
+    align-self: flex-start;
+    border-left: 3px dashed #000000;
+    transform: translate(-46.5px, 0);
+    transition: border .5s;
+}
+
+.bulb {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tip {
+    position: absolute;
+    top: -10px;
+    width: 20px;
+    height: 10px;
+    border: 2px solid;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+    background-color: #647689;
+    transition: 1s all;
+    transition-delay: .5s;
+}
+
+.holder {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    border: 2px solid;
+    height: 120px;
+    width: 90px;
+    z-index: 0;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+    background-color: #647689;
+    transition: 1s all;
+    transition-delay: .5s;
+}
+
+.holder div {
+    width: 100%;
+    height: 17px;
+    border-radius: 100%;
+    box-sizing: border-box;
+    border-radius: 3px solid #000000;
+}
+
+.holder div:nth-child(1) {
+    width: 90%;
+    margin-top: 14px;
+}
+
+.glass {
+    position: absolute;
+    top: 75px;
+    width: 170px;
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #000000;
+    background-color: #4e648a;
+    border-radius: 50%;
+    transition: 1s all;
+}
+
+.bulb:hover .holder,
+.bulb:hover .tip {
+    background-color: #eff0f0;
+}
+
+.bulb:hover ~ .wire {
+    border-left: 3px solid red;
+}
+
+.glass span {
+    font-size: 14px;
+    transition: .5s all;
+}
+
+.bulb:hover .glass span {
+    opacity: 0;
+}
+
+.bulb:hover .glass {
+    background-color: gold;
+    box-shadow: 0 120px 200px 150px gold;
+}
