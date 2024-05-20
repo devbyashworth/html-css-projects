@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+}
+
+.magic-border {
+    position: relative;
+    color: #222222;
+    cursor: pointer;
+    padding: 20px 50px;
+    text-align: center;
+    font-family: "Oswald";
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #efefef;
+}
+
+.magic-border::before {
+    content: "";
+    position: absolute;
+    top: calc(4px / -1);
+    left: calc(4px / -1);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background: linear-gradient(to right, #222222 0%, #222222 100%),
+    linear-gradient(to top, #222222 50%, transparent 50%),
+    linear-gradient(to top, #222222 50%, transparent 50%),
+    linear-gradient(to right, #222222 0%, #222222 100%),
+    linear-gradient(to left, #222222 0%, #222222 100%);
+    background-size: 100% 4px, 4px 200%, 4px 200%, 0% 4px, 0% 4px;
+    background-position: 50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
+    background-repeat: no-repeat, no-repeat;
+    transition: transform .4s ease-in-out, background-position .4s ease-in-out, background-size .4s ease-in-out;
+    transform: scaleX(0) rotate(180deg);
+    transition-delay: .6s, .4s, .2s;
+}
+
+.magic-border:hover::before {
+    background-size: 200% 4px, 4px 400%, 4px 400%, 55% 4px, 55% 4px;
+    background-position: 50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
+    transform: scaleX(1) rotate(180deg);
+    transition-delay: .2s, .4s, .6s;
+}
