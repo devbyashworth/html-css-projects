@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #000;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background: url("./netflix.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 25px 60px;
+}
+
+nav a img {
+    width: 167px;
+}
+
+.form-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 450px;
+    padding: 70px;
+    border-radius: 4px;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, .75);
+}
+
+.form-wrapper h2 {
+    font-size: 2rem;
+    color: #fefefe;
+}
+
+.form-wrapper form {
+    margin: 25px 0 65px;
+}
+
+.form-control {
+    margin-top: 25px;
+}
+
+.form-control input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 1rem; 
+    color: #fefefe;
+    padding: 10px 20px;
+    border-radius: 4px;
+    background-color: #333;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+    padding: 16px 20px;
+    background-color: #444;
+}
+
+.form-control label {
+    font-size: 1rem;
+    color: #8c8c8c;
+    pointer-events: none;
+    transition: all .1s ease;
+}
+
+
+
+form button {
+    width: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 16px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 4px;
+    margin: 25px 0 10px;
+    transition: .1s ease;
+    background-color: #e50914;
+}
+
+form button:hover {
+    background-color: #c40812;
+}
+
+.form-wrapper a {
+    text-decoration: none;
+}
+
+.form-wrapper a:hover {
+    text-decoration: underline;
+}
+
+.form-wrapper :where(label, p, a) {
+    color: #b3b3b3;
+}
+
+form .form-help {
+    display: flex;
+    justify-content: space-between;
+}
+
+form .remember-me {
+    display: flex;
+}
+
+form .remember-me input {
+    margin-right: 5px;
+    accent-color: #b3b3b3;
+}
+
+form .form-help :where(label, a) {
+    font-size: .9rem;
+}
+
+.form-wrapper p a {
+    color: #fefefe;
+}
+
+.form-wrapper small {
+    display: block;
+    color: #b3b3b3;
+    margin-top: 15px;
+}
+
+.form-wrapper small a {
+    color: #0071eb;
+}
+
+@media screen and (max-width: 740px) {
+    body::before {
+        display: none;
+    }
+    nav, .form-wrapper {
+        padding: 20px
+    }
+    nav a img {
+        width: 140px;
+    }
+    .form-wrapper {
+        top: 43%;
+        width: 100%;
+    }
+    .form-wrapper form {
+        margin: 25px 0 40px;
+    }
+}
