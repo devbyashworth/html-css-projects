@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Poppinsdisplay=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #f2f5f5;
+    background-color: #1f2023;
+    font-family: "Poppins", sans-serif;
+}
+
+.menu {
+    width: 450px;
+    height: auto;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #313237;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+
+.menu .btn {
+    position: relative;
+    display: block;
+    padding: 1rem;
+    font-size: 18px;
+    color: #aaaaaa;
+    text-decoration: none;
+    border-bottom: 1px solid #1b1b2f;
+}
+
+.menu .btn:hover {
+    color: #fefefe;
+}
+
+.menu .submenu {
+    max-height: 0;
+    overflow: hidden;
+    background-color: #3a3a42;
+    transition: max-height .8s ease-out;
+}
+
+.menu .submenu a {
+    position: relative;
+    display: block;
+    padding: 1rem;
+    color: #fefefe;
+    text-decoration: none;
+}
+
+.menu .submenu a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    opacity: 0;
+    height: 100%;
+    display: block;
+    transition: all .5s;
+    background-color: #e43f5a;
+}
+
+.menu .submenu a:hover {
+    padding-left: calc(1rem + 5px);
+}
+
+.menu .submenu a:hover::before {
+    opacity: 1;
+}
+
+.item:target .submenu {
+    max-height: 20rem;
+}
