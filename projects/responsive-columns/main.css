@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #000000;
+    font-family: "Montserrat", sans-serif;
+}
+
+.article {
+    padding: 25px;
+    font-size: 16px;
+    columns: 2 auto; 
+    column-gap: 25px;
+    color: #fefefe;
+    background-color: #121212;
+}
+
+.title {
+    column-span: all;
+    padding: 25px 0;
+}
