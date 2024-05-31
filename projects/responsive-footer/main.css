@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Montserrat&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #e0e0e0;
+    font-family: "Montserrat", sans-serif;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #000000;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: 80px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: #afafb6;
+}
+
+.footer-container {
+    margin: auto;
+    max-width: 1250px;
+    padding: 20px 15px 40px 15px; 
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px; 
+}
+
+.top .logo-details {
+    color: #fefefe;
+    font-size: 30px;
+}
+
+.link-boxes {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    color: #fefefe;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.link-boxes .box {
+    width: calc(100% / 5 - 10px);
+    list-style: none;
+}
+
+.link-boxes .box .link-name {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.link-boxes .box li {
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.link-boxes .box li a {
+    opacity: 0.6;
+    color: #f2f5f5;
+    text-decoration: none;
+}
+
+.link-boxes .box li a:hover {
+    opacity: 1;
+}
+
+.link-boxes .input-box li input[type="email"] {
+    border: none;
+    outline: none;
+    padding: 8px;
+    display: block;
+    border-radius: 3px;
+}
+
+.link-boxes .input-box li input[type="button"] {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #121212;
+    padding: 6px 25px;
+    border-radius: 3px;
+    background-color: #e1dee9;
+    transition: all .25s ease-in;
+}
+
+.link-boxes .input-box li input[type="button"]:hover {
+    color: #121212;
+    background-color: #fefefe;
+}
+
+.link-boxes .input-box .link-name {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.link-boxes .input-box li {
+    margin-bottom: 6px;
+}
+
+.bottom-details {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 15px; 
+}
+
+.bottom-details .bottom-text span,
+.bottom-details .bottom-text a {
+    opacity: 0.8;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fefefe;
+    text-decoration: none;
+}
+
+.bottom-details .bottom-text a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.bottom-details .bottom-text a {
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 900px) {
+    .link-boxes {
+        flex-wrap: wrap;
+    }
+    .link-boxes .input-box {
+        width: 40%;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    footer {
+        position: relative;
+    }
+    .link-boxes .box {
+        width: calc(100% / 3 - 10px);
+    }
+    .link-boxes .input-box {
+        width: 60%;
+    }
+    .bottom-details .bottom-text span,
+    .bottom-details .bottom-text a {
+        font-size: 12px;
+    }
+}
