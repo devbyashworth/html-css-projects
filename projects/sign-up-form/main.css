@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Ubuntu&display=swap');
+
+* {
+    user-select: none;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #000000;
+    --blue: #37b9f1;
+    --gray: #cccccc;
+    --white: #fefefe;
+    --black: #121212;
+    --transition: 1.25s;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    color: var(--gray);
+    background-color: var(--black);
+    font-family: "Montserrat", sans-serif;
+}
+
+.main {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    min-width: 400px;
+    min-height: 500px;
+    border-radius: 10px;
+    background-color: var(--bg);
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    background-color: var(--bg);
+    border-radius: 10px;
+}
+
+.form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-title, .form-span {
+    margin: 10px 0 12px 0;
+}
+
+.form-icons {
+    margin: 10px;
+    display: flex;
+    column-gap: 20px;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 50%;
+    outline: 1px solid var(--gray);
+    transition-property: outline-offset, outline-color, background-color;
+    transition-duration: .25s;
+    color: var(--white);
+}
+
+.icon:hover {
+    outline-offset: 2px;
+}
+
+.icon:hover i {
+    animation: shake .25s;
+}
+
+.form-input {
+    border: none;
+    outline: none;
+    width: 300px;
+    height: 40px;
+    margin: 10px 0;
+    padding-left: 25px;
+    letter-spacing: .15px;
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--gray);
+    transition: .25s ease;
+    border-radius: 4px;
+}
+
+
+.form-link {
+    font-size: 14px;
+    color: var(--blue);
+    margin: 15px 0 20px 0;
+    text-decoration: none;
+}
+
+.btn {
+    width: 180px;
+    height: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: var(--black);
+    border-radius: 3px;
+    letter-spacing: 1.15px;
+    text-transform: uppercase;
+    background-color: var(--white);
+}
+
+.btn:hover {
+    color: var(--white);
+    background-color: var(--black);
+    box-shadow: 2px 2px 4px #333333, -2px -2px 4px #333333;
+}
+
+.btn:active,
+.btn:focus {
+    transition: .25s;
+    transform: scale(.97);
+    box-shadow: 2px 2px 4px #333333, -2px -2px 4px #333333;
+}
