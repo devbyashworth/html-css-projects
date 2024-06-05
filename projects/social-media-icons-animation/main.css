@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Ubuntu&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #908e9b;
+    font-family: 'Mulish', sans-serif;
+}
+
+.icons {
+    display: flex;
+    column-gap: 25px;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 50%;
+    color: #fefefe;
+    font-size: 25px;
+    outline: 1px solid #fefefe;
+    transition-property: outline-offset, outline-color, background-color;
+    transition-duration: .25s;
+}
+
+.social-icon:hover {
+    outline-offset: 2px;
+}
+
+.social-icon:hover i {
+    animation: shake .25s;
+}
+
+.icon-instagram:hover {
+    outline-color: #a02d76;
+    background-image: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+}
+
+.icon-twitter:hover {
+    outline-color: #1da1f2;
+    background-color: #1da1f2;
+}
+
+.icon-linkedin:hover {
+    outline-color: #0077b5;
+    background-color: #0077b5;
+}
+
+.icon-github:hover {
+    outline-color: #000000;
+    background-color: #000000;
+}
+
+@keyframes shake {
+    10% {transform: rotate(15deg);}
+    20% {transform: rotate(-15deg);}
+    10% {transform: rotate(15deg);}
+    40% {transform: rotate(-15deg);}
+}
