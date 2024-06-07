@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Ubuntu&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #121212;
+    font-family: 'Mulish', sans-serif;
+}
+
+.title span {
+    --total: calc(var(--duration) * var(--delay));
+    position: relative;
+    display: block;
+    overflow: hidden;
+    color: #fefefe;
+    animation: revealText 4s var(--total) forwards;
+}
+
+.title span::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    background-color: #121212;
+    animation: rollIn var(--duration) var(--delay) forwards, rollOut var(--duration) var(--delay) forwards;
+}
+
+@keyframes revealText {
+    to {
+        color: #fefefe;
+    }
+}
+
+@keyframes rollIn {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes rollOut {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(105%);
+    }
+}
