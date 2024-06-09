@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Ubuntu&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #000000;
+    font-family: 'Mulish', sans-serif;
+}
+
+.text_container h2 {
+    margin: 0 auto;
+    overflow: hidden;
+    color: #f2f5f5;
+    font-size: 2rem; 
+    white-space: nowrap;
+    letter-spacing: 0.1rem; 
+    border-right: 0.2rem solid #ff4757;
+    animation: typing 4s steps(40, end), blink 0.75s step-end infinite; 
+}
+
+h2 span {
+    color: #ff4757;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: #ff4757; }
+}
