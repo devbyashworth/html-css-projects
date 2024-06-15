@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Header Animation To Sticky Nav</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero">
+        <h1>Pure CSS Header Animation</h1>
+    </div>
+    <nav>
+        <div class="logo">CodeCraftHub</div>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Stuff</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+    <main>
+        <h1 class="title">Web Development</h1>
+        <div class="contents">
+            <div class="content">
+                <h1>HTML</h1>
+                <p>HTML (Hypertext Markup Language) is the standard markup language used to create web pages.</p>
+                <p>It defines the structure and layout of a web page by using a variety of tags and attributes.</p>
+                <div class="code-snippet">
+                    <pre><code>
+                        &lt;!DOCTYPE html&gt;
+                        &lt;html lang="en"&gt;
+                        &lt;head&gt;
+                            &lt;meta charset="UTF-8"&gt;
+                            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                            &lt;title&gt;My HTML Page&lt;/title&gt;
+                        &lt;/head&gt;
+                        &lt;body&gt;
+                            &lt;h1&gt;Hello, World!&lt;/h1&gt;
+                        &lt;/body&gt;
+                        &lt;/html&gt;
+                    </code></pre>
+                </div>
+                <a href="https://www.w3.org/TR/html52/" target="_blank">Learn more about HTML</a>
+            </div>
+            <div class="content">
+                <h1>CSS</h1>
+                <p>CSS (Cascading Style Sheets) is a styling language used for describing the presentation of a document written in HTML.</p>
+                <p>It controls the layout, colors, fonts, and other visual aspects of a web page, making it aesthetically pleasing and user-friendly.</p>
+                <div class="code-snippet">
+                    <pre><code>
+                        body {
+                            font-family: Arial, sans-serif;
+                            background-color: #f0f0f0;
+                        }
+                        h1 {
+                            color: blue;
+                            text-align: center;
+                        }
+                    </code></pre>
+                </div>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">Learn more about CSS</a>
+            </div>                       
+            <div class="content">
+                <h1>JavaScript</h1>
+                <p>JavaScript is a high-level, interpreted programming language that is used to make web pages interactive and dynamic.</p>
+                <p>It is commonly used for client-side development to add interactivity to websites, such as form validation, dynamic content updates, and animations.</p>
+                <div class="code-snippet">
+                    <pre><code>
+                        document.getElementById('demo').innerHTML = 'Hello, JavaScript!';
+                    </code></pre>
+                </div>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">Learn more about JavaScript</a>
+            </div>            
+            <div class="content">
+                <h1>React</h1>
+                <p>React is a JavaScript library for building user interfaces, developed by Facebook.</p>
+                <p>It allows developers to create reusable UI components and build complex, interactive web applications with ease.</p>
+                <div class="code-snippet">
+                    <pre><code>
+                        import React from 'react';
+            
+                        function App() {
+                            return (
+                                &lt;div&gt;
+                                    &lt;h1&gt;Hello, React!&lt;/h1&gt;
+                                &lt;/div&gt;
+                            );
+                        }
+                        
+                        export default App;
+                    </code></pre>
+                </div>
+                <a href="https://reactjs.org/" target="_blank">Learn more about React</a>
+            </div>
+            <div class="content">
+                <h1>Node.js</h1>
+                <p>Node.js is an open-source, cross-platform JavaScript runtime environment that allows developers to run JavaScript code outside of a web browser.</p>
+                <p>It is commonly used for server-side development to build scalable, fast, and efficient web applications.</p>
+                <div class="code-snippet">
+                    <pre><code>
+                        const http = require('http');
+            
+                        const server = http.createServer((req, res) =&gt; {
+                            res.writeHead(200, {'Content-Type': 'text/plain'});
+                            res.end('Hello, Node.js!');
+                        });
+                        
+                        server.listen(3000, 'localhost', () =&gt; {
+                            console.log('Server running at http://localhost:3000/');
+                        });
+                    </code></pre>
+                </div>
+                <a href="https://nodejs.org/" target="_blank">Learn more about Node.js</a>
+            </div>
+            <div class="content">
+                <h1>Python</h1>
+                <p>Python is a high-level, interpreted programming language known for its simplicity and readability.</p>
+                <p>It is widely used for various purposes, including web development, data analysis, artificial intelligence, machine learning, and more.</p>
+                <div class="code-snippet">
+                    <pre><code>
+                        print("Hello, Python!")
+                    </code></pre>
+                </div>
+                <a href="https://www.python.org/" target="_blank">Learn more about Python</a>
+            </div>
+            <!-- Additional Content -->
+            <div class="content">
+                <h1>Git</h1>
+                <p>Git is a distributed version control system used for tracking changes in source code during software development.</p>
+                <p>It allows multiple developers to collaborate on projects, manage different versions of files, and revert to previous states when needed.</p>
+                <div class="code-snippet">
+                    <pre><code>
+                        git init
+                        git add .
+                        git commit -m "Initial commit"
+                    </code></pre>
+                </div>
+                <a href="https://git-scm.com/" target="_blank">Learn more about Git</a>
+            </div>
+            <div class="content">
+                <h1>Visual Studio Code</h1>
+                <p>Visual Studio Code (VS Code) is a popular source-code editor developed by Microsoft for Windows, macOS, and Linux.</p>
+                <p>It provides built-in support for JavaScript, TypeScript, and Node.js, and offers a rich ecosystem of extensions for other languages and frameworks.</p>
+                <a href="https://code.visualstudio.com/" target="_blank">Learn more about Visual Studio Code</a>
+            </div>
+            <div class="content">
+                <h1>Bootstrap</h1>
+                <p>Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development.</p>
+                <p>It contains CSS- and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.</p>
+                <a href="https://getbootstrap.com/" target="_blank">Learn more about Bootstrap</a>
+            </div>
+            <div class="content">
+                <h1>Express.js</h1>
+                <p>Express.js is a minimal and flexible Node.js web application framework that provides a robust set of features to develop web and mobile applications.</p>
+                <p>It facilitates the rapid development of server-side web applications and APIs, simplifying tasks such as routing, middleware integration, and request handling.</p>
+                <a href="https://expressjs.com/" target="_blank">Learn more about Express.js</a>
+            </div>
+            <div class="content">
+                <h1>SQL</h1>
+                <p>SQL (Structured Query Language) is a domain-specific language used in programming and designed for managing data held in a relational database management system (RDBMS).</p>
+                <p>It is used for tasks such as querying data, updating data, inserting data, and deleting data from databases.</p>
+                <a href="https://www.w3schools.com/sql/" target="_blank">Learn more about SQL</a>
+            </div>
+            <div class="content">
+                <h1>RESTful APIs</h1>
+                <p>RESTful APIs (Representational State Transfer APIs) are web-based architectural styles for designing networked applications.</p>
+                <p>They use standard HTTP methods such as GET, POST, PUT, DELETE for performing operations on resources, providing interoperability between systems.</p>
+                <a href="https://restfulapi.net/" target="_blank">Learn more about RESTful APIs</a>
+            </div>
+            <div class="content">
+                <h1>GraphQL</h1>
+                <p>GraphQL is a query language for APIs and a runtime for executing those queries with existing data.</p>
+                <p>It provides a more efficient, powerful, and flexible alternative to RESTful APIs by allowing clients to request only the data they need.</p>
+                <a href="https://graphql.org/" target="_blank">Learn more about GraphQL</a>
+            </div>
+            <div class="content">
+                <h1>Web Accessibility</h1>
+                <p>Web accessibility refers to the inclusive practice of ensuring that websites and web applications are usable by everyone, regardless of disability.</p>
+                <p>It involves designing and developing websites in a way that allows people with disabilities to perceive, understand, navigate, and interact with the web.</p>
+                <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/" target="_blank">Learn more about Web Accessibility</a>
+            </div>
+            <div class="content">
+                <h1>Progressive Web Apps (PWAs)</h1>
+                <p>Progressive Web Apps (PWAs) are web applications that use modern web capabilities to provide a user experience similar to that of mobile apps.</p>
+                <p>They are reliable, fast, and engaging, and can work offline or on low-quality networks, making them accessible to a wide range of users.</p>
+                <a href="https://web.dev/progressive-web-apps/" target="_blank">Learn more about PWAs</a>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>
