@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css?family=IBM%20Plex%20Sans:500|IBM%20Plex%20Sans:300");
+
+:root { --m: 4rem}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+    height: 190vh;
+    color: #d5d5d5;
+    font-weight: 300;
+    background-color: #333333;
+    font-size: calc(0.3 * var(--m));
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+h2 {
+    font-weight: 500;
+    text-align: center;
+    font-size: var(--m);
+}
+
+h3 {
+    font-weight: 500;
+    font-size: calc(0.6 * var(--m));
+}
+
+.card {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--m);
+    color: #121212;
+    height: calc(8 * var(--m));
+    width: calc(12 * var(--m));
+    border-radius: calc(0.5 * var(--m));
+    background: linear-gradient(120deg, #ff8064, #725bdc);
+    margin: calc(2 * var(--m)) calc(5 * var(--m)) calc(5 * var(--m)) calc(5 * var(--m));
+}
+
+button {
+    border: none;
+    color: #d5d5d5;
+    font-weight: 400;
+    background-color: #000;
+    font-size: calc(0.4 * var(--m));
+    border-radius: calc(0.3 * var(--m));
+    padding: calc(0.35 * var(--m)) calc(0.8 * var(--m));
+}
+
+footer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    padding: 5rem 2vw;
+    margin-top: 80vh;
+    height: 190vh;
+    z-index: 500;
+    width: 100%;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    z-index: -7;
+    inset: 0;
+    background: linear-gradient( rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0.3) 20%,
+    rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 1) 50%,rgb(0, 0, 0));
+}
+
+.backdrop {
+    position: absolute;
+    inset: 0;
+    z-index: -5;
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    mask-image: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 10%, 
+    rgba(0, 0, 0, 0.8) 20%, rgba(0, 0, 0, 1) 30%, rgb(0, 0, 0));
+}
+
+.col {
+    width: 28%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: calc(0.3 * var(--m)) calc(0.8 * var(--m));
+}
+
+.col2, .col3 {
+    background-color: #121212;
+    border-radius: calc(0.1 * var(--m))
+}
+
+.col1 p, .col2 p, .col3 p { margin-top: 1.5rem; }
+.col2 p:hover, .col3 p:hover { 
+    cursor: pointer; 
+    color: #333333;
+}
+
+.social {
+    gap: 1rem;
+    display: flex;
+    margin-top: 1.5rem;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+a {
+    color: inherit;    
+    text-decoration: none;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(0.8 * var(--m));
+    height: calc(0.8 * var(--m));
+    border-radius: calc(0.1 * var(--m));
+    background-color: rgba(255,255,255,0.1);
+}
+
+@media screen and (max-width: 1000px) {
+    :root { --m: 3rem; }
+}
+
+@media screen and (max-width: 700px) {
+    footer {
+        padding: 5rem 20vw;
+        flex-direction: column;
+    }
+    .col { width: 100%; }
+}
