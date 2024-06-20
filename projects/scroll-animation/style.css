@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Poppins&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --size: 8rem;
+  --borderWidth: 10px;
+  --txt: calc(var(--percentage));
+  --angle: calc(var(--percentage, 0) * 3.6deg);
+  --primary-color: hsl(calc(var(--percentage, 0) * 3.6), 45%, 56%);
+  animation: updatePercentage linear;
+  animation-timeline: scroll();
+}
+
+@property --percentage {
+  inherits: false;
+  initial-value: 0;
+  syntax: "<number>";
+}
+
+@keyframes updatePercentage {
+  to { --percentage: 100; }
+}
+
+body {
+  width: 100vw;
+  color: #bbbbbb;
+  min-height: 100vh;
+  padding-top: 2rem;
+  overflow-x: hidden;
+  background-color: #222222;
+  font-family: "Poppins", sans-serif;
+}
+
+.progress:after { 
+  background: conic-gradient( var(--primary-color) var(--angle), transparent var(--angle) );
+}
+
+.percentages:after {
+  display: block;
+  content: counter(myCounter) "%";
+  counter-reset: myCounter var(--txt);
+}
+
+.progress {
+  position: fixed;
+  top: 2rem;
+  right: 4rem;
+  z-index: 2;
+  font-size: 2em;
+  margin: 60px auto;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 100%;
+  border: 1px solid #bbbbbb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress:before {
+  z-index: 1;
+  content: "";
+  position: absolute;
+  border-radius: 100%;
+  background: #222222;
+  width: calc(var(--size) - var(--borderWidth));
+  height: calc(var(--size) - var(--borderWidth));
+}
+
+.progress:after {
+  content: "";
+  position: absolute;
+  border-radius: 100%;
+  top: calc(var(--borderWidth) / -2);
+  left: calc(var(--borderWidth) / -2);
+  width: calc(var(--size) + var(--borderWidth));
+  height: calc(var(--size) + var(--borderWidth));
+}
+
+.percentages { z-index: 2; }
+
+main {
+  overflow-y: hidden;
+  margin-inline: auto;
+  width: min(100%, 120ch);
+}
+
+main h1 {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  font-size: 4rem;
+  line-height: 0.9;
+  white-space: nowrap;
+  padding-block: 2rem;
+  background: #222222;
+  color: var(--primary-color);
+}
+
+main .title { font-size: 6rem; }
+
+p, a { 
+  width: 98%;
+  padding: 1rem;
+  line-height: 1.75;
+}
+
+.contents .content { margin: 3rem 0; }
+
+.content .code-snippet { padding: .8rem 0rem; }
+
+a {
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+a:hover { text-decoration: underline; }
