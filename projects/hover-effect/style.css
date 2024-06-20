@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+    height: 100vh;
+    color: #fefefe;
+    background-color: #333333;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 { letter-spacing: 1.2px; }
+
+.btns {
+    width: 550px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    justify-content: space-around;
+    background-color: #bbbbbb;
+}
+
+.btns .btn {
+    border: none;
+    outline: none;
+    font-size: 17px;
+    cursor: pointer;
+    color: #fefefe;
+    padding: 12px 24px;
+    border-radius: 25px;
+    background-color: #121212;
+    transition: scale 0.25s ease-in, opacity 0.25s ease-in, filter 0.25s ease-in;
+}
+
+.btn:hover { scale: 1.10; }
+
+.btns:has(.btn:hover) .btn:not(:hover) {
+    scale: 0.8;
+    opacity: 0.8;
+    filter: blur(4px);
+}
