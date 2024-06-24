@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+	--text: white;
+	--border-size: 2px;
+	--background: black;
+	--border-radius: 0.75em;
+	--bright-red: rgb(255, 0, 0);
+	--bright-green: rgb(0, 255, 0);
+	--bright-blue: rgb(0, 100, 255);
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+	color: var(--text);
+    background: var(--background);
+    font-family: "Poppins", sans-serif;
+}
+
+@property --border-angle-1 {
+    inherits: true;
+    syntax: "<angle>";
+    initial-value: 0deg;
+}
+@property --border-angle-2 {
+    inherits: true;
+    syntax: "<angle>";
+    initial-value: 90deg;
+}
+@property --border-angle-3 {
+    inherits: true;
+    syntax: "<angle>";
+    initial-value: 180deg;
+}
+
+@supports (color: color(display-p3 1 1 1)) {
+    :root {
+        --bright-blue: color(display-p3 1 0 0);
+        --bright-red: color(display-p3 0 0.2 1);
+        --bright-green: color(display-p3 0.4 1 0);
+    }
+}
+
+button {
+    --border-angle-1: 0deg;
+    --border-angle-2: 90deg;
+    --border-angle-3: 180deg;
+    border: 0;
+    display: flex;
+    color: inherit;
+    width: max-content;
+    font-family: inherit;
+    padding: var(--border-size);
+    background-color: transparent;
+    font-size: calc(0.8rem + 4vmin);
+    border-radius: var(--border-radius);
+    background-image: conic-gradient(from var(--border-angle-1) at 10% 15%, transparent,
+        var(--bright-blue) 10%, transparent 30%, transparent),
+        conic-gradient(from var(--border-angle-2) at 70% 60%, transparent,
+        var(--bright-green) 10%, transparent 60%, transparent),
+        conic-gradient(from var(--border-angle-3) at 50% 20%, transparent,
+        var(--bright-red) 10%, transparent 50%, transparent);
+    animation: rotateBackground 3s linear infinite,
+        rotateBackground2 8s linear infinite,
+        rotateBackground2 13s linear infinite;
+}
+
+button div {
+    padding: 1em 1.5em;
+    color: var(--text);
+    background-color: var(--background);
+    border-radius: calc(var(--border-radius) - var(--border-size));
+}
+
+@keyframes rotateBackground { to { --border-angle-1: 360deg } }
+@keyframes rotateBackground2 { to { --border-angle-2: -270deg } }
+@keyframes rotateBackground3 { to { --border-angle-3: 540deg } }
