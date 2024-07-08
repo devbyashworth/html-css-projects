@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&family=Roboto:wght@100;300&display=swap');
+@import 'normalize.css';
+
+@property --swing-x {
+    initial-value: 0;
+    inherits: false;
+    syntax: '<integer>';
+}
+
+@property --swing-y {
+    initial-value: 0;
+    inherits: false;
+    syntax: '<integer>';
+}
+
+*,
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transform-style: preserve-3d;
+}
+
+:root {
+    --speed: 2s;
+    --bg: hsl(0 0% 70%);
+    --header: hsl(0 0% 65%);
+    --lit-header: hsl(0 0% 100%);
+    --shadow: hsl(0 0% 0% / 0.9);
+    --ease: linear(0 0%,
+            0.0036 9.62%,
+            0.0185 16.66%,
+            0.0489 23.03%,
+            0.0962 28.86%,
+            0.1705 34.93%,
+            0.269 40.66%,
+            0.3867 45.89%,
+            0.5833 52.95%,
+            0.683 57.05%,
+            0.7829 62.14%,
+            0.8621 67.46%,
+            0.8991 70.68%,
+            0.9299 74.03%,
+            0.9545 77.52%,
+            0.9735 81.21%,
+            0.9865 85%,
+            0.9949 89.15%,
+            1 100%);
+    color-scheme: dark only;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    perspective: 1200px;
+    min-height: 100vh;
+    gap: 1rem;
+    background-color: var(--bg);
+    font-family: 'Roboto', 'SF Pro Text', 'SF Pro Icons', 'AOS Icons',
+        'Helvetica Neue', Helvetica, Arial, sans-serif, system-ui;
+}
+
+body::before {
+    --size: 45px;
+    --line: color-mix(in 1ch, canvas, transparent 85%);
+    content: "";
+    position: fixed;
+    top: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    transform-style: left;
+    mask: linear-gradient(-35deg, transparent 30%, white);
+    background: linear-gradient(90deg, var(--line) 1px, transparent 1px var(--size)) 50% 50% / var(--size) var(--size),
+        linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% / var(--size) var(--size);
+}
+
+h1 {
+    --x: calc(50% +(var(--swing-x) * 0.5) * 1%) margin: 0;
+    color: transparent;
+    letter-spacing: 1rem;
+    background-clip: text;
+    -webkit-background-clip: text;
+    transform: translate3d(0, 0, 0vmin);
+    font-family: 'Open Sans', sans-serif;
+    font-size: clamp(5rem, 40vmin, 20rem);
+    background: radial-gradient(var(--lit-header), var(--header) 45%) var(--x) 100%/200% 200%;
+    animation: swing var(--speed) infinite alternate var(--ease);
+}
+
+h1 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--shadow);
+    filter: blur(1.5vmin);
+    transform: scale(1.05) translate3d(0, 12%, -10vmin) translate(calc((var(--swing-x) * 0.05) * 1%), calc(var(--swing-y) * -0.025) * 1%);
+    animation: swing var(--speed) infinite alternate var(--ease);
+}
+
+p {
+    font-weight: 100;
+}
+
+.clock__wrapper {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.clock__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250vmax;
+    height: 250vmax;
+}
+
+.clock {
+    width: 100%;
+    height: 100%;
+    transform-origin: 50% 25%;
+    transform: rotate(calc(var(--swing-x) * -0.25deg));
+    background: radial-gradient(40% 40% at 50% calc(42% + (var(--swing-y) * 0.01%)), transparent,
+            hsl(0 0% 2% / 0.94) 38vmax);
+    animation: swing var(--speed) infinite alternate-reverse var(--ease);
+}
+
+.info {
+    width: 44ch;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    line-height: 1.5;
+    gap: 1rem;
+    max-width: calc(100% - 2rem);
+    color: color-mix(in lch, canvasText, transparent 75%);
+    transition: color 0.25s var(--ease);
+}
+
+.info:is(:hover, :focus-within) {
+    color: canvasText;
+}
+
+.info p {
+    --x: calc(50% + (var(--swing-x) * 0.5) * 1%);
+    color: transparent;
+    color: #fefefe;
+    background-clip: text;
+    -webkit-background-clip: text;
+    /* background: radial-gradient(50% 250% at var(--x) -50%,
+            color-mix(in lch, canvasText, transparent 25%),
+            color-mix(in lch, canvasText, transparent 75%)); */
+    animation: swing var(--speed) infinite alternate-reverse var(--ease);
+}
+
+p::selection {
+    color: canvas;
+    background-color: rgb(177, 103, 103);
+}
+
+.home {
+    align-self: center;
+    border-radius: 6px;
+    color: currentColor;
+    text-decoration: none;
+    padding: 0.75rem 4rem;
+    outline-color: currentColor;
+    border: 1px solid currentColor;
+}
+
+@keyframes swing {
+    0% {
+        --swing-x: -100;
+        --swing-y: -100;
+    }
+    50% {
+        --swing-y: 0;
+    }
+    100% {
+        --swing-x: 100;
+        --swing-y: -100;
+    }
+}
