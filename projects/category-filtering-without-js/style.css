@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 1000px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    gap: 5px;
+}
+
+.filters li {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    list-style: none;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #fefefe;
+}
+
+.filters li:hover {
+    cursor: pointer;
+    color: #4361ee;
+    border: 1px solid #4361ee;
+}
+
+.filters li label {
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.filters li input {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.item-wrapper .item {
+    width: 25%;
+    float: left;
+    height: 200px;
+    padding: 10px;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* NATURE  */
+.filters:has(li input[name="nature"]:checked) + .item-wrapper .item:not([data-type="nature"]) {
+    display: none;
+}
+.filters:has(li input[name="nature"]:checked) + .item-wrapper .item[data-type="nature"] {
+    display: flex;
+}
+
+/* SUNSET  */
+.filters:has(li input[name="sunset"]:checked) + .item-wrapper  .item:not([data-type="sunset"]) {
+    display: none;
+}
+.filters:has(li input[name="sunset"]:checked) + .item-wrapper  .item[data-type="sunset"] {
+    display: flex;
+}
+
+/* TECHNOLOGY  */
+.filters:has(li input[name="technology"]:checked) + .item-wrapper  .item:not([data-type="technology"]) {
+    display: none;
+}
+.filters:has(li input[name="technology"]:checked) + .item-wrapper  .item[data-type="technology"] {
+    display: flex;
+}
+
+/* INDOORS  */
+.filters:has(li input[name="indoor"]:checked) + .item-wrapper  .item:not([data-type="indoor"]) {
+    display: none;
+}
+.filters:has(li input[name="indoor"]:checked) + .item-wrapper  .item[data-type="indoor"] {
+    display: flex;
+}
+
+/* CATS  */
+.filters:has(li input[name="cats"]:checked) + .item-wrapper  .item:not([data-type="cats"]) {
+    display: none;
+}
+.filters:has(li input[name="cats"]:checked) + .item-wrapper  .item[data-type="cats"] {
+    display: flex;
+}
+
