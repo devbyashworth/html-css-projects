@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collapsible Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="container">
+        <figure>
+            <figcaption>
+                <h1>Collapsible Gallery</h1>
+                <p>
+                    Use the button <span class="desktop">to the right</span> <span class="mobile">below</span> to open and close my gallery. You can hover over images to expand them. I wanted to save some vertical space and give users a fun interaction on my site so here it is. You could put multiple of these stacked on each other, as an idea.
+                </p>
+            </figcaption>
+            <button type="button" class="control">
+                <label for="init">
+                    <span>Expand</span>
+                    <span>Collapse</span>
+                </label>
+                <input type="checkbox" name="init" id="init">
+            </button>
+        </figure>
+        <section class="gallery">
+            <div style="background-image: url('https://picsum.photos/id/849/500/500');"></div>
+            <div style="background-image: url('https://picsum.photos/id/476/500/500');"></div>
+            <div style="background-image: url('https://picsum.photos/id/57/500/500');"></div>
+            <div style="background-image: url('https://picsum.photos/id/82/500/500');"></div>
+            <div style="background-image: url('https://picsum.photos/id/680/500/500');"></div>
+            <div style="background-image: url('https://picsum.photos/id/553/500/500');"></div>
+            <div style="background-image: url('https://picsum.photos/id/193/500/500');"></div>
+            <div style="background-image: url('https://picsum.photos/id/565/500/500');"></div>
+        </section>
+    </section>
+</body>
+
+</html>
