@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&family=Montserrat:wght@400;500&display=swap');
+
+:root {
+    --radius: 4px;
+    --primary-color: #c8dc71;
+    --gradient-color: linear-gradient(270deg, #ce6cec 0%, #dc717f 100%);
+    --gradient-color-2: linear-gradient(270deg, #c8dc71 0%, #6cece1 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #16181b;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.button {
+    position: relative;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 13px 30px;
+    text-decoration: none;
+    background-color: #000000;
+    border-radius: var(--radius);
+    transition: all 0.4s ease-in-out;
+}
+
+.button span {
+    color: #fefefe;
+    transition: color 0.4s ease-in-out;
+}
+
+.button:hover span {
+    color: var(--primary-color);
+}
+
+.button::before,
+.button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: var(--radius);
+    pointer-events: none;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    transition: all 0.4s ease-in-out;
+}
+
+.button:hover::before {
+    transform: translate(4px, -4px);
+    background: var(--gradient-color);
+}
+
+.button:hover::after {
+    z-index: -2;
+    transform: translate(8px, -8px);
+    background: var(--gradient-color-2);
+}
