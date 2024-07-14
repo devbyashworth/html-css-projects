@@ -1,0 +1,78 @@
+:root {
+    --sizeVar: 7vw;
+    --persVar: 50vw;
+}
+
+body,
+.flex-wrapper,
+.flex-wrapper div {
+    transform-style: preserve-3d;
+    perspective: var(--persVar);
+}
+
+body {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    margin-right: calc(var(--sizeVar) * 2);
+}
+
+.flex-wrapper {
+    display: flex;
+    flex-direction: column;
+    transform: rotate3d(1, 0, 0, 70deg);
+    /*  80deg  */
+}
+
+.flex-container {
+    position: relative;
+    display: flex;
+    gap: calc(var(--sizeVar) / 2);
+    height: calc(var(--sizeVar) / 2);
+}
+
+.flex-container:nth-of-type(even) {
+    transform: translateX(calc(var(--sizeVar) / 1.33));
+}
+
+.flex-container:has(.hive:hover) {
+    z-index: 999;
+}
+
+.hive {
+    scale: 0.95;
+    cursor: pointer;
+    width: var(--sizeVar);
+    height: var(--sizeVar);
+}
+
+.hive::after,
+.hive::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    background: linear-gradient(90deg, rgba(215, 123, 21, 1) 0%, rgba(255, 220, 0, 1) 100%);
+    transition: transform 300ms ease-in-out 0s, filter 300ms ease-in-out 0s;
+}
+
+.hive:hover::after {
+    filter: brightness(200%);
+    transform: translateZ(calc(var(--sizeVar) / 10));
+}
+
+.hive::before {
+    scale: 1;
+    opacity: 0.2;
+    background: black;
+    transition: transform 300ms linear 0s;
+}
+
+.hive:hover::before {
+    scale: 1.25;
+    opacity: 0.2;
+}
