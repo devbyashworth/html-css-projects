@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --clr: #fff;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #1b1b1b;
+    font-family: "Lato", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+ul {
+    display: flex;
+    gap: 50px;
+}
+
+ul li {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+ul li::before {
+    content: "";
+    position: absolute;
+    inset: 30px;
+    box-shadow: 0 0 0 10px var(--clr), 0 0 0 20px #1b1b1b, 0 0 0 30px var(--clr);
+}
+
+ul li:hover::before {
+    inset: 15px;
+}
+
+ul li::after {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    background-color: #1b1b1b;
+    transform: rotate(45deg);
+    transition: 0.5s;
+}
+
+ul li:hover::after {
+    inset: -12px;
+    transform: rotate(0deg);
+}
+
+ul li a {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+ul li a i {
+    font-size: 2em;
+    color: var(--clr);
+    transition: 0.5s;
+}
+
+ul li:hover a i {
+    transform: translateY(-40%);
+}
+
+ul li a span {
+    position: absolute;
+    opacity: 0;
+    color: var(--clr);
+    font-family: sans-serif;
+    transform: scale(0) translateY(200%);
+    transition: 0.5s;
+}
+
+ul li:hover a span {
+    opacity: 1;
+    transform: scale(1) translateY(100%);
+}
+
+ul li:hover a i,
+ul li:hover a span {
+    filter: drop-shadow(0 0 20px var(--clr)) drop-shadow(0 0 40px var(--clr)) drop-shadow(0 0 60px var(--clr));
+}
