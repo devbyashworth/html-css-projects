@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+:root {
+	--dark: #0c0c0c;
+	--light: #ffe6e6;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--dark);
+	font-family: "Inter", sans-serif;
+}
+
+.container {
+    --bg-color: radial-gradient(circle at 50% 0%, rgba(50, 50, 50, 1) 0%,rgba(12, 12, 12, 1) 100%);
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: clip;
+    padding: 2rem 5rem;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color);
+}
+
+.category-container {
+    --gap: 0.5rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* flex-wrap: nowrap; */
+    align-items: center;
+    justify-content: space-between;
+    gap: calc(var(--gap) * 2);
+}
+
+.content-container {
+    --active: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 1rem;
+    cursor: pointer;
+    overflow: clip;
+    height: 100%;
+    gap: 1.5rem;
+    z-index: 10;
+    padding: 2.5rem;
+    width: calc((100% / 3) - var(--gap));
+    transition: width 0.5s ease-in-out;
+}
+
+.content-container:hover {
+    --active: 1;
+    width: calc(70% - var(--gap));
+}
+
+.content-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    opacity: 0.6;
+    background-color: var(--dark);
+}
+
+.content-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -20;
+    object-fit: cover;
+    object-position: center;
+}
+
+.content-container .profile-image {
+    opacity: calc(1 - var(--active));
+    transition: opacity 0.3s ease-in-out;
+}
+
+.content-container .profile-details {
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    gap: 0.5rem;
+    transition: transform 0.5s cubic-bezier(0.23, 0.93, 0.77, 1) 0.01s;
+}
+
+.profile-details span {
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-wrap: nowrap;
+    color: var(--light);
+}
+
+.profile-details p {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--light);
+    font-variant: small-caps;
+}
+
+.profile-content {
+    width: 22rem;
+    transform: translate(0, calc((1 - var(--active)) * (100% + 2.5rem)));
+}
+
+.profile-content p {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--light);
+    transform: translate(0, calc((1 - var(--active)) * (100% + 2.5rem)));
+    transition: transform 0.5s cubic-bezier(0.23, 0.93, 0.77, 1) 0.1s;
+}
