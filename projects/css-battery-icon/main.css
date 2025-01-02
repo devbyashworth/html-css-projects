@@ -1,69 +1,70 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: #121212;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #121212;
 }
 
 .battery-icon {
-    position: relative;
-    width: 200px;
-    height: 60px;
-    border-radius: 10px;
-    border: 2px solid #9e9e9e;
+  position: relative;
+  width: 200px;
+  height: 60px;
+  border-radius: 10px;
+  border: 2px solid #9e9e9e;
+  background-color: #2d2d2d;
 }
 
 .battery-icon::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: -15px;
-    transform: translateY(-50%);
-    background-color: #9e9e9e;
-    border-radius: 5px;
-    height: 30px;
-    width: 15px;
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -15px;
+  transform: translateY(-50%);
+  background-color: #9e9e9e;
+  border-radius: 5px;
+  height: 30px;
+  width: 15px;
 }
 
 .battery-icon::before {
-    content: "";
-    position: absolute;
-    top: 2%;
-    left: 1.1%;
-    bottom: 2%;
-    width: 0%;
-    height: 96%;
-    border-radius: 5px;
-    animation: battery-change 8s linear infinite;
+  content: "";
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  bottom: 2%;
+  width: 0%;
+  height: 96%;
+  border-radius: 5px;
+  background-color: #ff0000;
+  animation: battery-change 8s linear infinite;
 }
 
 @keyframes battery-change {
-    0%, 25% {
-        width: 0%;
-        background-color: #ff0000;
-    }
-    25%, 50% {
-        width: 25%;
-        background-color: #ff9100;
-    }
-    50%, 75% {
-        width: 50%;
-        background-color: #fff200;
-    }
-    75%, 100% {
-        width: 75%;
-        background-color: #d7fc83;
-    }
-    100% {
-        width: calc(100% - 1.1%);
-        background-color: #00ff00;
-    }
+  0% {
+    width: 0%;
+    background-color: #ff0000;
+  }
+  25% {
+    width: 25%;
+    background-color: #ff9100;
+  }
+  50% {
+    width: 50%;
+    background-color: #fff200;
+  }
+  75% {
+    width: 75%;
+    background-color: #d7fc83;
+  }
+  100% {
+    width: 96%;
+    background-color: #00ff00;
+  }
 }
