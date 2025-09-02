@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Ubuntu&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1c22;
+  color: #fefefe;
+  font-family: "Poppins", sans-serif;
+}
+
+.cards {
+  display: flex;
+  gap: 30px;
+}
+
+input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+article {
+  position: relative;
+  perspective: 1000px;
+  width: 300px;
+  height: 320px;
+}
+
+.front,
+.back {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 32px;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: #fefefe;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.front {
+  z-index: 2;
+}
+
+.back {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+.back p {
+  font-size: 22px;
+  color: #b2b5c3;
+}
+
+article .icon {
+  width: 76px;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  border-radius: 50%;
+}
+
+.icon span {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+input:checked ~ article .front {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+input:checked ~ article .back {
+  transform: rotateY(0);
+  z-index: 2;
+}
+
+article var {
+  line-height: 1;
+  font-size: 64px;
+  font-style: normal;
+}
+
+article h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 500;
+  color: #b2b5c3;
+}
+
+/* Custom Colors */
+#sent {
+  color: #643fe1;
+}
+
+#tag {
+  color: purple;
+}
+
+#conversation {
+  color: cyan;
+}
+
+#sent span,
+#tag span,
+#conversation span {
+  background-color: #edebfb;
+}
