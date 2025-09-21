@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu&display=swap");
+
+:root {
+  --fancy-border: 2px dotted rgb(255 255 255 /25%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #f9f9f9;
+  background-color: #020204;
+  font-family: "Poppins", sans-serif;
+}
+
+footer {
+  display: grid;
+  gap: 48px;
+}
+
+.hero {
+  position: relative;
+  padding: 56px;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: #13e6c9;
+}
+
+.hero .header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.header h2 {
+  font-weight: 400;
+  font-size: clamp(30px, 6vw, 50px);
+}
+
+.header p {
+  display: none;
+  max-width: 45%;
+  margin-top: 8px;
+  font-size: 17px;
+  opacity: 0.7;
+}
+
+.hero .bg {
+  position: absolute;
+  right: -50px;
+  bottom: 0;
+  width: 50vw;
+}
+
+.box-btn {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 24px 16px;
+  width: 21vw;
+  height: 100px;
+  min-width: 200px;
+  border-radius: 4px;
+  font-size: 18px;
+  color: inherit;
+  font-family: inherit;
+  background: transparent;
+  border: 2px solid rgb(255 255 255/65%);
+}
+
+.box-btn::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  inset: 0;
+  margin-right: -10px;
+  margin-bottom: -10px;
+  border-radius: inherit;
+  border-right: var(--fancy-border);
+  border-bottom: var(--fancy-border);
+}
+
+.box-btn span {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.support-btn {
+  display: none;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 58px;
+  padding: 0 24px 0 56px;
+}
+
+.logo {
+  position: absolute;
+  top: 56px;
+  right: 56px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+nav {
+  flex: 1 1 auto;
+  display: flex;
+  gap: 10vw;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav h3 {
+  opacity: 0.4;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+nav a {
+  display: inline-block;
+  font-size: 20px;
+  padding: 10px 0;
+  color: #f9f9f9;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #cccccc;
+}
+
+@media screen and (width >= 860px) {
+  .hero .bg {
+    right: 0;
+  }
+
+  nav {
+    gap: 8vw;
+  }
+
+  .content {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .support-btn {
+    display: flex;
+  }
+}
+
+@media screen and (width >= 1036px) {
+  .hero p {
+    display: block;
+  }
+
+  .logo {
+    height: 36px;
+  }
+
+  .content {
+    gap: 0;
+  }
+
+  .logo {
+    position: static;
+    margin-right: 72px;
+  }
+}
