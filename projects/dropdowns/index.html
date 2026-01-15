@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdowns</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+    />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="dropdown">
+        <button>
+            <span class="material-symbols-outlined icon">account_circle</span> John Doe
+            <span class="material-symbols-outlined icon">expand_more</span>
+        </button>
+
+        <input type="checkbox" name="create" id="create"> <!-- more inputs -->
+        <div class="menu">
+            <div class="menu-inner">
+                <div class="menu-menu">
+                    <label for="create">
+                        <span class="material-symbols-outlined icon">add_box</span>
+                        <p>Create</p>
+                        <span class="material-symbols-outlined icon">chevron_right</span>
+                    </label>
+                </div>
+                <div class="sub-menu create">
+                    <label for="create">
+                        <span class="material-symbols-outlined icon">arrow_back</span>
+                        <p>create</p>
+                    </label>
+                    <button>
+                        <span class="material-symbols-outlined icon">folder</span>
+                        <p>Document</p>
+                    </button> <!-- more buttons -->
+                </div> <!-- more sub menus -->
+            </div>
+        </div>
+        
+        <input type="checkbox" name="settings" id="settings"> <!-- more inputs -->
+        <div class="menu">
+            <div class="menu-inner">
+                <div class="menu-menu">
+                    <label for="settings">
+                        <span class="material-symbols-outlined icon">add_box</span>
+                        <p>Settings</p>
+                        <span class="material-symbols-outlined icon">chevron_right</span>
+                    </label>
+                </div>
+                <div class="sub-menu settings">
+                    <label for="settings">
+                        <span class="material-symbols-outlined icon">arrow_back</span>
+                        <p>Settings</p>
+                    </label>
+                    <button>
+                        <span class="material-symbols-outlined icon">storage</span>
+                        <p>Storage</p>
+                    </button> 
+                    <button>
+                        <span class="material-symbols-outlined icon">privacy</span>
+                        <p>Privacy</p>
+                    </button> 
+                    <button>
+                        <span class="material-symbols-outlined icon">security</span>
+                        <p>Security</p>
+                    </button> 
+                    <button>
+                        <span class="material-symbols-outlined icon">account</span>
+                        <p>Account</p>
+                    </button> 
+                    <button>
+                        <span class="material-symbols-outlined icon">accessibility</span>
+                        <p>Accessibility</p>
+                    </button> 
+                    <button>
+                        <span class="material-symbols-outlined icon">system</span>
+                        <p>System</p>
+                    </button> <!-- more buttons -->
+                </div> <!-- more sub menus -->
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
