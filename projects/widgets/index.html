@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Widgets</title>
+
+    <!-- Material Symbols -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+
+    <!-- Google Font -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <!-- RADIO INPUTS -->
+      <input type="radio" name="menu" id="tab-home" checked />
+      <input type="radio" name="menu" id="tab-performance" />
+      <input type="radio" name="menu" id="tab-customization" />
+      <input type="radio" name="menu" id="tab-support" />
+
+      <!-- LINKS -->
+      <div class="buttons">
+        <label for="tab-home">
+          <span class="material-symbols-outlined">lock</span>
+          Security
+        </label>
+
+        <label for="tab-performance">
+          <span class="material-symbols-outlined">speed</span>
+          Performance
+        </label>
+
+        <label for="tab-customization">
+          <span class="material-symbols-outlined">tune</span>
+          Customization
+        </label>
+
+        <label for="tab-support">
+          <span class="material-symbols-outlined">support_agent</span>
+          Support
+        </label>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="wrapper">
+        <div class="content">
+          <div class="block">
+            <h2>Security</h2>
+            <p>
+              We implement industry-leading security standards to protect your
+              data, including end-to-end encryption, secure storage, and
+              continuous system monitoring. Regular updates and compliance best
+              practices ensure your information remains confidential and
+              protected at all times.
+            </p>
+          </div>
+
+          <div class="block">
+            <h2>Performance</h2>
+            <p>
+              Built for speed and reliability, the platform delivers fast load
+              times and smooth interactions through optimized assets,
+              intelligent caching, and scalable infrastructure. Performance is
+              consistent across all devices and environments.
+            </p>
+          </div>
+
+          <div class="block">
+            <h2>Customization</h2>
+            <p>
+              Tailor the platform to your specific needs with flexible
+              configuration options. Customize layouts, enable or disable
+              features, and adjust preferences to create an experience that
+              aligns seamlessly with your workflow.
+            </p>
+          </div>
+
+          <div class="block">
+            <h2>Support</h2>
+            <p>
+              Our dedicated support team provides timely and reliable assistance
+              whenever you need it. With comprehensive documentation and
+              responsive guidance, we ensure issues are resolved efficiently and
+              your experience remains seamless.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
