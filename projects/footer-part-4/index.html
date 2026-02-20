@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Footer</title>
+
+    <!-- Material Symbols -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+
+    <!-- Google Font -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <footer>
+      <div class="top">
+        <div class="left">
+          <h2>Contact Us</h2>
+          <blockquote>Let's Discuss Your Software Vision</blockquote>
+
+          <button>
+            Schedule a call
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </button>
+        </div>
+
+        <div class="right links">
+          <ul>
+            <h2>Company</h2>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+
+          <ul>
+            <h2>Resources</h2>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Instructions</a></li>
+            <li><a href="#">Docs</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <div class="left">
+          <p>
+            &copy; <span id="year"></span> devbyashworth. All Rights Reserved
+          </p>
+        </div>
+
+        <div class="right socials">
+          <a href="#" class="fa-brands fa-github"></a>
+          <a href="#" class="fa-brands fa-codepen"></a>
+          <a href="#" class="fa-brands fa-linkedin"></a>
+          <a href="#" class="fa-brands fa-instagram"></a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
