@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebar</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <input type="checkbox" id="toggle" />
+
+    <aside class="sidebar">
+      <div class="header">
+        <img src="./dev_by_ashworth.png" alt="logo" class="logo" />
+        <img src="./dev_by_ashworth.png" alt="logo text" class="logo-text" />
+      </div>
+
+      <nav>
+        <button class="active" type="button">
+          <i class="fa-solid fa-house"></i>
+          <p>Home</p>
+        </button>
+
+        <button type="button">
+          <i class="fa-solid fa-address-book"></i>
+          <p>Contact</p>
+        </button>
+
+        <button type="button">
+          <i class="fa-solid fa-robot"></i>
+          <p>Automation</p>
+        </button>
+
+        <button type="button">
+          <i class="fa-solid fa-comments"></i>
+          <p>Manychat AI</p>
+        </button>
+
+        <button type="button">
+          <i class="fa-solid fa-inbox"></i>
+          <p>Inbox</p>
+        </button>
+
+        <button type="button">
+          <i class="fa-solid fa-gear"></i>
+          <p>Settings</p>
+        </button>
+
+        <label for="toggle">
+          <span class="toggle-btn"></span>
+        </label>
+      </nav>
+
+      <nav class="bottom">
+        <button type="button">
+          <img src="./dev_by_ashworth.png" alt="profile logo" class="avatar" />
+          <p>Profile</p>
+        </button>
+      </nav>
+    </aside>
+  </body>
+</html>
