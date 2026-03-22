@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #292929;
+  min-height: 100vh;
+}
+
+/* BUTTONS */
+
+button {
+  border: 0;
+  width: 100%;
+  color: inherit;
+  cursor: pointer;
+  font-size: 16px;
+  background: transparent;
+}
+
+/* LOGO */
+
+h1 {
+  display: grid;
+  place-items: center;
+  height: 38px;
+  width: 38px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-right: 16px;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 10%);
+  color: white;
+}
+
+/* NAVBAR ELEMENTS */
+
+:is(.navbar, .burger, .dropdowns) {
+  position: fixed;
+  top: 0;
+}
+
+/* ARROW ICON */
+
+img {
+  width: 20px;
+  height: 20px;
+  transform: rotate(90deg);
+  transition: transform 0.3s;
+}
+
+/* NAVBAR */
+
+.navbar {
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  color: #f9f9f9;
+  background: linear-gradient(to right, #0387b7, #6506ff);
+}
+
+/* BURGER */
+
+.burger {
+  right: 0;
+  width: 72px;
+  height: 72px;
+  z-index: 20;
+
+  display: grid;
+  place-items: center;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 26px;
+
+  background-image: url("./menu-styled.png");
+}
+
+body.open .burger {
+  background-image: url("./close-circle.png");
+}
+
+/* DROPDOWNS */
+
+.dropdowns {
+  top: 84px;
+  right: 10px;
+  left: -9999px;
+
+  z-index: 9;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 14px 0;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.3s,
+    visibility 0.3s;
+}
+
+/* dropdown background */
+
+.dropdowns::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  background: #28282d;
+  z-index: -1;
+}
+
+/* DROPDOWN */
+
+.dropdown {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* main dropdown button */
+
+.dropdown > button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0.5;
+  height: 40px;
+  padding: 0 12px;
+  font-size: 15px;
+  text-align: left;
+}
+
+.dropdown > button:hover {
+  opacity: 1;
+}
+
+/* MENU */
+
+.dropdown-menu {
+  height: 0;
+  width: 100%;
+  display: grid;
+  overflow: hidden;
+  transition: height 0.4s;
+}
+
+.dropdown-menu > button {
+  color: #f9f9f9;
+  padding: 0 20px;
+  font-size: 14px;
+  text-align: left;
+  white-space: nowrap;
+  min-height: 40px;
+}
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+  body.open .dropdowns {
+    left: 10px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  body.open img {
+    display: block;
+  }
+
+  .dropdown > button:focus > img {
+    transform: rotate(-180deg);
+  }
+
+  .dropdown > button:focus ~ .dropdown-menu {
+    height: 120px;
+  }
+
+  .dropdown > button > img {
+    margin-left: auto;
+  }
+}
+
+/* DESKTOP */
+
+@media (min-width: 500px) {
+  .burger {
+    display: none;
+  }
+
+  .dropdowns {
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    visibility: visible;
+    opacity: 1;
+
+    background: transparent;
+  }
+
+  .dropdowns::before {
+    display: none;
+  }
+
+  .dropdown {
+    height: 72px;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .dropdown > button {
+    opacity: 0.6;
+    height: 72px;
+    padding: 0 12px;
+  }
+
+  .dropdown:hover > button {
+    opacity: 1;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 72px;
+    width: auto;
+    height: 120px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    display: grid;
+    place-items: start;
+
+    transform: translateY(20px);
+    transition: 0.3s;
+
+    padding: 6px 24px 10px;
+
+    background: #28282d;
+    border-radius: 6px;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .dropdown-menu > button {
+    opacity: 0.6;
+    height: 40px;
+  }
+
+  .dropdown-menu > button:hover {
+    opacity: 1;
+  }
+}
