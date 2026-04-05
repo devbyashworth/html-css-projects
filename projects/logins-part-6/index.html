@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logins</title>
+    <!-- Material Symbols -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <div class="background"></div>
+      <img src="./dev_by_ashworth.png" alt="logo" class="logo" />
+      <form action="#" class="form">
+        <div class="textbox">
+          <span class="material-symbols-outlined icon">person</span>
+          <input
+            type="text"
+            name="email"
+            id="email"
+            autocomplete="off"
+            required
+          />
+          <label for="email">Email</label>
+        </div>
+        <div class="textbox">
+          <span class="material-symbols-outlined icon">lock</span>
+          <input type="password" name="password" id="password" />
+          <label for="password">Password</label>
+        </div>
+        <button type="submit" class="btn">
+          <p>Login</p>
+          <span class="material-symbols-outlined icon">arrow_forward</span>
+        </button>
+      </form>
+      <a href="#">Forgot password?</a>
+      <p class="footer">
+        By using this software program you agree to our
+        <a href="#">privacy policy</a> and <a href="#">terms of use</a>.
+      </p>
+    </div>
+  </body>
+</html>
