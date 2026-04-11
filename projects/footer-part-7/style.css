@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  background: url("./need-for-speed.jpg") center/cover no-repeat;
+  color: #f9f9f9;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+main {
+  flex: 1;
+}
+
+.logo {
+  height: 34px;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: 146px;
+  height: 48px;
+  padding: 8px;
+  text-align: left;
+  color: #f9f9f9;
+  border-radius: 10px;
+  background: rgb(255 255 255 /4%);
+  border: 1px solid rgb(255 255 255 /25%);
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding: 40px 20px;
+}
+
+.footer-inner {
+  position: relative;
+  flex: 1;
+  z-index: 1;
+  border-radius: 48px;
+  padding: 48px 32px 32px;
+  background: rgb(0 0 0 /18%);
+  border: 1px solid rgb(255 255 255 /20%);
+}
+
+.button-label {
+  display: block;
+  font-size: 9px;
+}
+
+.button svg {
+  flex-shrink: 0;
+}
+
+.button span {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.top,
+.bottom {
+  display: flex;
+}
+
+.top {
+  margin-bottom: 36px;
+}
+
+.top-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  margin-right: 56px;
+}
+
+p {
+  margin: 0;
+  opacity: 0.6;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+  font-size: 18px;
+}
+
+.links a {
+  color: #f9f9f9;
+  text-decoration: none;
+}
+
+.bottom {
+  padding-top: 12px;
+  align-items: center;
+  border-top: 1px solid rgb(255 255 255 /12%);
+}
+
+.end {
+  margin-left: auto;
+}
+
+/* SOCIAL CONTAINER */
+.socials {
+  display: flex;
+  gap: 14px;
+}
+
+/* SOCIAL BUTTON */
+.socials a {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+
+  /* GLASS EFFECT */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  /* SMOOTH ANIMATION */
+  transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.socials a:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ICON COLORS ON HOVER */
+.socials a.fa-facebook:hover {
+  background: #1877f2;
+}
+
+.socials a.fa-twitter:hover {
+  background: #1da1f2;
+}
+
+.socials a.fa-discord:hover {
+  background: #5865f2;
+}
+
+.socials a.fa-linkedin:hover {
+  background: #0a66c2;
+}
+
+@media screen and (width <= 948px) {
+  .logo {
+    scale: 1.15;
+    margin: 0 auto;
+  }
+
+  .links {
+    width: 100%;
+    margin-bottom: 40px;
+    justify-content: center;
+  }
+
+  .top-left p {
+    padding: 0 9vw;
+  }
+
+  .top-left {
+    margin: 0;
+  }
+
+  .bottom p {
+    margin-bottom: 12px;
+  }
+
+  .buttons {
+    margin: 0 auto;
+  }
+
+  .top {
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media screen and (width < 720px) {
+  .bottom {
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .end {
+    margin: 0;
+  }
+}
+
+@media screen and (width < 660px) {
+  .top-left p {
+    display: none;
+  }
+
+  .links {
+    display: grid;
+    text-align: left;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .links a {
+    width: 82px;
+    font-size: 20px;
+  }
+
+  .logo {
+    scale: 1.25;
+    margin-top: 16px;
+    margin-bottom: 28px;
+  }
+}
