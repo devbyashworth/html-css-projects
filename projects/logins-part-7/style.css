@@ -1,0 +1,239 @@
+:root {
+  --bg: #f1f2ff;
+  --duration: 0.6s;
+  --text: #3c4566;
+  --surface: #ffffff;
+  --easing: cubic-bezier(0.16, 1, 0.3, 1);
+  --easing-panel: cubic-bezier(0.65, 0, 0.35, 1);
+  --gradient: linear-gradient(135deg, #8960e2, #3ba2fb);
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #1b1b1b;
+  font-family: "Poppins", sans-serif;
+}
+
+/* CARD */
+.card {
+  position: relative;
+  width: 660px;
+  height: 440px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow:
+    0 20px 80px rgba(124, 92, 191, 0.16),
+    0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* TOGGLE */
+.toggle {
+  display: none;
+}
+
+/* BACKGROUND SLIDER */
+.card-bg {
+  position: absolute;
+  width: 50%;
+  inset: 0 auto 0 0;
+  background: var(--gradient);
+  transition: var(--duration) var(--easing-panel);
+  z-index: 2;
+}
+
+.toggle:checked ~ .card-bg {
+  transform: translateX(100%);
+}
+
+/* PANELS */
+.hero,
+.form {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  transition: var(--duration) var(--easing-panel);
+}
+
+/* DEFAULT STATE (SIGNUP visible) */
+.hero.signup,
+.form.signup {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.hero.signin,
+.form.signup {
+  left: 50%;
+}
+
+/* HIDDEN STATES */
+.hero.signin {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(25%);
+}
+
+.form.signin {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(50%);
+}
+
+/* TOGGLE ACTIVE */
+.toggle:checked ~ .hero.signup {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-25%);
+}
+
+.toggle:checked ~ .form.signup {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%);
+}
+
+.toggle:checked ~ .hero.signin,
+.toggle:checked ~ .form.signin {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 0 28px;
+  text-align: center;
+  color: #fff;
+  z-index: 3;
+}
+
+.hero h2 {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.hero p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.hero label {
+  margin-top: 10px;
+  font-size: 13px;
+  padding: 10px 36px;
+  border-radius: 30px;
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero label:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ================= FORM ================= */
+
+.form {
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--text);
+  background: #fff;
+}
+
+/* TITLE */
+.form h2 {
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+/* SOCIAL ICONS */
+.socials {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.socials i {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #f3f4f6;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.socials i:hover {
+  background: #e5e7eb;
+}
+
+/* FORM TEXT */
+.form a {
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+.form p {
+  font-size: 13px;
+  margin-bottom: 14px;
+  color: #6b7280;
+}
+
+/* INPUTS */
+.form form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form input {
+  width: 100%;
+  height: 42px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  outline: none;
+  transition: 0.2s;
+}
+
+.form input:focus {
+  border-color: #8960e2;
+  box-shadow: 0 0 0 2px rgba(137, 96, 226, 0.15);
+}
+
+/* BUTTON */
+.btn {
+  margin-top: 6px;
+  height: 42px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #8960e2, #3ba2fb);
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
