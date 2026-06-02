@@ -1,0 +1,190 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  min-height: 100vh;
+  background-color: #292929;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Buttons & Labels */
+label,
+button {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  background: transparent;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  bottom: 24px;
+  width: 280px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  padding: 0 16px;
+
+  border-radius: 34px;
+
+  backdrop-filter: blur(30px);
+  background: rgb(0 0 0 / 12%);
+  border: 3px solid rgb(255 255 255 / 12%);
+
+  transition: all 0.4s ease;
+  overflow-y: auto;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  height: 72px;
+  padding: 10px 16px 0;
+
+  border-bottom: 1px solid rgb(255 255 255 / 8%);
+}
+
+header i {
+  margin-left: auto;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Logo */
+.logo {
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.logo-text {
+  font-size: 18px;
+  color: #fefefe;
+  font-variant: small-caps;
+  white-space: nowrap;
+}
+
+/* Hide Radio Buttons */
+.sidebar input {
+  position: absolute;
+  scale: 0;
+}
+
+/* Expand Submenus */
+.sidebar input#settings:checked ~ .sub-menu {
+  height: 150px;
+}
+
+.sidebar input#schedule:checked ~ .sub-menu {
+  height: 200px;
+}
+
+.sidebar input#profile:checked ~ .sub-menu {
+  height: 200px;
+}
+
+/* Menu Items */
+.sidebar :is(button, label) {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  width: 100%;
+  height: 50px;
+
+  padding: 0 16px;
+
+  font-size: 16px;
+  font-family: inherit;
+
+  color: rgb(225 225 225 / 95%);
+  border-radius: 6px;
+
+  transition: all 0.3s ease;
+}
+
+.sidebar label p:nth-child(2) {
+  flex: 1;
+}
+
+/* Active Item */
+input:checked ~ label {
+  background: rgb(255 255 255 / 10%);
+}
+
+/* Rotate Arrow */
+label i:last-child {
+  transition: 0.3s ease;
+}
+
+input:checked ~ label > i:last-child {
+  transform: rotate(-180deg);
+}
+
+/* Hover Effects */
+input:not(:checked) ~ label:hover,
+button:hover {
+  background: rgb(255 255 255 / 3%);
+}
+
+/* Menu List */
+.sidebar ul {
+  display: grid;
+  gap: 4px;
+  list-style: none;
+}
+
+/* Sub Menu */
+.sub-menu {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.4s ease;
+}
+
+.sub-menu ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* Sub Menu Buttons */
+.sub-menu button {
+  padding-left: 52px;
+}
+
+/* Bullet */
+.sub-menu button::before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 24px;
+
+  transform: translateY(-50%);
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+  background: rgb(255 255 255 / 35%);
+}

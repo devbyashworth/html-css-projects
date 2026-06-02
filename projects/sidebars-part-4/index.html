@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebar</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <aside class="sidebar">
+      <header>
+        <img src="./dev_by_ashworth.png" alt="Logo" class="logo" />
+        <h1 class="logo-text">Dev by Ashworth</h1>
+        <i class="fa-solid fa-bars"></i>
+      </header>
+
+      <ul>
+        <li>
+          <input type="radio" name="sidebar" id="home" checked />
+          <label for="home">
+            <i class="fa-solid fa-house"></i>
+            <p>Home</p>
+          </label>
+        </li>
+
+        <li>
+          <input type="radio" name="sidebar" id="settings" />
+          <label for="settings">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <p>Products</p>
+            <i class="fa-solid fa-chevron-down"></i>
+          </label>
+
+          <div class="sub-menu">
+            <ul>
+              <li><button type="button">Agents</button></li>
+              <li><button type="button">Analytics</button></li>
+              <li><button type="button">Dashboard</button></li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <input type="radio" name="sidebar" id="schedule" />
+          <label for="schedule">
+            <i class="fa-solid fa-calendar"></i>
+            <p>Schedule</p>
+            <i class="fa-solid fa-chevron-down"></i>
+          </label>
+
+          <div class="sub-menu">
+            <ul>
+              <li><button type="button">Alerts</button></li>
+              <li><button type="button">Generation</button></li>
+              <li><button type="button">Management</button></li>
+              <li><button type="button">Suspension</button></li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <input type="radio" name="sidebar" id="profile" />
+          <label for="profile">
+            <i class="fa-solid fa-users"></i>
+            <p>People</p>
+            <i class="fa-solid fa-chevron-down"></i>
+          </label>
+
+          <div class="sub-menu">
+            <ul>
+              <li><button type="button">Team</button></li>
+              <li><button type="button">Users</button></li>
+              <li><button type="button">Clients</button></li>
+              <li><button type="button">Partners</button></li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <input type="radio" name="sidebar" id="notifications" />
+          <label for="notifications">
+            <i class="fa-solid fa-bell"></i>
+            <p>Notifications</p>
+          </label>
+        </li>
+
+        <li>
+          <input type="radio" name="sidebar" id="account" />
+          <label for="account">
+            <i class="fa-solid fa-user"></i>
+            <p>Account</p>
+          </label>
+        </li>
+      </ul>
+    </aside>
+  </body>
+</html>
