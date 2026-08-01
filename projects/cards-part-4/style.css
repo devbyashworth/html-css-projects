@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Ubuntu&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-muted: #9895a2;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  color: #fefefe;
+  background-color: #1a1c22;
+  background-color: #ebf2f7;
+  color: #4d4a57;
+  font-family: "Poppins", sans-serif;
+}
+
+.card {
+  position: relative;
+  width: 80vw;
+  padding-top: 30px;
+  border-radius: 24px;
+  background-color: #fefefe;
+  box-shadow: 0 50px 50px rgb(112 104 155 / 8%);
+}
+
+/* .card img { */
+.card .top-avatar {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  translate: -50% -50%;
+  border: 6px solid #fefefe;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  width: 84px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 24px 0;
+  text-align: center;
+}
+
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  font-weight: 400;
+}
+
+em {
+  color: #41a8e3;
+  font-style: normal;
+}
+
+h2 {
+  margin: 18px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+h3 {
+  font-weight: 300;
+  font-size: clamp(16px, 3.5vw, 20px);
+  color: var(--color-muted);
+}
+
+h4 {
+  font-weight: 500;
+  font-size: clamp(22px, 5vw, 26px);
+  margin-bottom: 6px;
+}
+
+h5 {
+  margin-bottom: 40px;
+  color: var(--color-muted);
+  font-size: clamp(14px, 3.5vw, 16px);
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: clamp(14px, 3.5vw, 16px);
+  margin-bottom: 20px;
+  padding: 0 24px;
+}
+
+.salary em {
+  color: var(--color-muted);
+}
+
+.date {
+  color: var(--color-muted);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #e5e9ec;
+  padding: 12px 24px;
+  gap: 10px;
+}
+
+.footer button {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid #e5e9ec;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  margin-right: auto;
+  gap: 12px;
+  padding-right: 20px;
+  border-radius: 50px;
+  background-color: #f6f9fa;
+}
+
+.badge .bottom-avatar {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.badge .text {
+  display: none;
+}
+
+@media screen and (width >= 430px) {
+  .card {
+    padding-top: 0;
+  }
+
+  .card .top-avatar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    left: auto;
+    translate: 0;
+    border-color: transparent;
+    width: clamp(68px, 10vw, 80px);
+  }
+
+  .main {
+    text-align: left;
+  }
+
+  .badge .text {
+    display: inline;
+  }
+
+  h5 {
+    margin-bottom: 28px;
+  }
+}
+
+@media screen and (width >= 540px) {
+  .card {
+    max-width: 500px;
+  }
+}
