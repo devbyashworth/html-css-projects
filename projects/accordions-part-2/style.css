@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: #121212;
+  color: #fefefe;
+  font-family: "Poppins", sans-serif;
+}
+
+.accordion {
+  width: min(100%, 1200px);
+  height: 400px;
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.accordion li {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 32px;
+  cursor: pointer;
+  opacity: 0.75;
+  transition:
+    flex 0.35s ease,
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.accordion li:hover,
+.accordion li:focus-within {
+  flex: 5;
+  opacity: 1;
+  transform: scale(1.03);
+  z-index: 2;
+}
+
+.accordion li:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+.accordion li img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.5);
+  transition:
+    filter 0.35s ease,
+    transform 0.35s ease;
+}
+
+.accordion li:hover img {
+  filter: grayscale(0);
+  transform: scale(1.08);
+}
+
+.accordion li::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+  z-index: 1;
+}
+
+.accordion .content {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 1rem;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease;
+}
+
+.accordion .content .text {
+  transform: translateY(20px);
+  opacity: 0;
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.accordion li:hover .content,
+.accordion li:focus-within .content {
+  opacity: 1;
+  visibility: visible;
+}
+
+.accordion li:hover .text,
+.accordion li:focus-within .text {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.accordion h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid #fff;
+  display: inline-block;
+}
+
+.content p {
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .accordion {
+    flex-direction: column;
+    height: auto;
+  }
+  .accordion li {
+    flex: none;
+    height: 90px;
+  }
+  .accordion li:hover,
+  .accordion li:focus-within {
+    height: 260px;
+    transform: none;
+  }
+}
