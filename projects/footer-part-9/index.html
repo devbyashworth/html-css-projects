@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Footer</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <footer>
+      <div class="footer-inner">
+        <div class="top">
+          <div class="top-left">
+            <img
+              src="./dev_by_ashworth.png"
+              alt="Dev by Ashworth Logo"
+              class="logo"
+            />
+            <p>
+              Building digital experiences that inspire, educate, and empower
+              developers to create amazing products with confidence.
+            </p>
+            <nav class="links" aria-label="Footer navigation">
+              <a href="#">About</a>
+              <a href="#">Guides</a>
+              <a href="#">Support</a>
+              <a href="#">Contact</a>
+            </nav>
+          </div>
+          <div class="buttons end">
+            <button type="button" class="button">
+              <img src="./play-store.png" alt="play store logo" />
+              <span>
+                <span class="button-label">Get it on</span>
+                <span class="button-title">Google Play</span>
+              </span>
+            </button>
+            <button type="button" class="button">
+              <img src="./apple-inc.png" alt="apple inc logo" />
+              <span>
+                <span class="button-label">Download on the</span>
+                <span class="button-title">App Store</span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class="bottom">
+          <p>
+            &copy;
+            <span id="year"></span>
+            Dev by Ashworth. All rights reserved.
+          </p>
+          <div class="socials end">
+            <a href="#" aria-label="Facebook" class="fa-brands fa-facebook">
+            </a>
+            <a href="#" aria-label="Twitter" class="fa-brands fa-x-twitter"></a>
+            <a
+              href="#"
+              aria-label="Linkedin"
+              class="fa-brands fa-linkedin-in"
+            ></a>
+            <a href="#" aria-label="Discord" class="fa-brands fa-discord"></a>
+            <a
+              href="#"
+              aria-label="Instagram"
+              class="fa-brands fa-instagram"
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

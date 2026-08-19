@@ -1,0 +1,391 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ==========================================
+   RESET
+========================================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   VARIABLES
+========================================== */
+
+:root {
+  --primary: #8a6bf1;
+  --primary-hover: #7554eb;
+
+  --text: #ffffff;
+  --muted: rgba(255, 255, 255, 0.72);
+
+  --glass: rgba(255, 255, 255, 0.08);
+  --glass-hover: rgba(255, 255, 255, 0.14);
+  --border: rgba(255, 255, 255, 0.15);
+
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+
+  --radius: 32px;
+  --transition: 0.3s ease;
+}
+
+/* ==========================================
+   BODY
+========================================== */
+
+body {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 2rem;
+
+  font-family: "Poppins", sans-serif;
+
+  color: var(--text);
+
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #312e81 100%);
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+
+  border-radius: calc(var(--radius) + 4px);
+
+  background: rgba(255, 255, 255, 0.05);
+
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+}
+
+/* ==========================================
+   INNER CONTAINER
+========================================== */
+
+.footer-inner {
+  position: relative;
+  z-index: 1;
+
+  padding: 60px 48px 40px;
+
+  border-radius: var(--radius);
+
+  border: 1px solid var(--border);
+
+  background: var(--glass);
+
+  box-shadow: var(--shadow);
+}
+
+/* ==========================================
+   TOP & BOTTOM
+========================================== */
+
+.top,
+.bottom {
+  display: flex;
+}
+
+.top {
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.bottom {
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding-top: 24px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ==========================================
+   LEFT
+========================================== */
+
+.top-left {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 3px;
+  object-fit: contain;
+}
+
+.top-left p {
+  max-width: 420px;
+
+  color: var(--muted);
+
+  font-size: 0.975rem;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.links a {
+  color: var(--text);
+
+  text-decoration: none;
+
+  font-weight: 500;
+
+  transition: color var(--transition);
+}
+
+.links a:hover {
+  color: var(--primary);
+}
+
+/* ==========================================
+   APP STORE BUTTONS
+========================================== */
+
+.buttons {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.button {
+  width: 170px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px 14px;
+
+  border-radius: 14px;
+
+  text-decoration: none;
+  color: var(--text);
+
+  border: 1px solid var(--border);
+
+  background: rgba(255, 255, 255, 0.06);
+
+  transition: all var(--transition);
+
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+
+  background: var(--glass-hover);
+
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.button img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.button span {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-label {
+  font-size: 0.65rem;
+  opacity: 0.75;
+}
+
+.button-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* ==========================================
+   COPYRIGHT
+========================================== */
+
+.bottom p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ==========================================
+   SOCIALS
+========================================== */
+
+.socials {
+  display: flex;
+  gap: 14px;
+}
+
+.socials a {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: var(--text);
+
+  text-decoration: none;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  transition: all var(--transition);
+}
+
+.socials a:hover {
+  background: var(--primary);
+
+  transform: translateY(-3px);
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+a:focus-visible,
+.button:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 4px;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 900px) {
+  .footer-inner {
+    padding: 48px 32px;
+  }
+
+  .top {
+    flex-direction: column;
+    gap: 40px;
+
+    text-align: center;
+  }
+
+  .top-left {
+    align-items: center;
+  }
+
+  .top-left p {
+    max-width: 600px;
+  }
+
+  .buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 640px) {
+  body {
+    padding: 1rem;
+  }
+
+  .footer-inner {
+    padding: 36px 24px;
+  }
+
+  .logo {
+    width: 56px;
+    height: 56px;
+  }
+
+  .links {
+    width: 100%;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .bottom p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ==========================================
+   SMALL PHONES
+========================================== */
+
+@media (max-width: 480px) {
+  .links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    text-align: center;
+    gap: 18px;
+  }
+
+  .button {
+    height: 60px;
+  }
+
+  .button-title {
+    font-size: 0.95rem;
+  }
+
+  .socials {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
