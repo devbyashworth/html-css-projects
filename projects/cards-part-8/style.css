@@ -1,0 +1,438 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ===========================
+   RESET
+=========================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===========================
+   VARIABLES
+=========================== */
+
+:root {
+  --color-text: #222;
+  --color-muted: #6b7280;
+  --color-primary: #111827;
+  --color-white: #ffffff;
+
+  --radius-card: 36px;
+  --radius-image: 28px;
+
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+
+  --transition: 0.35s ease;
+}
+
+/* ===========================
+   BODY
+=========================== */
+
+body {
+  min-height: 100vh;
+
+  display: grid;
+  place-items: center;
+
+  padding: 2rem;
+
+  font-family: "Poppins", sans-serif;
+
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #312e81 100%);
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.card {
+  position: relative;
+
+  width: min(95%, 700px);
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  border-radius: var(--radius-card);
+
+  background: white;
+
+  box-shadow: var(--shadow);
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25);
+}
+
+/* ===========================
+   IMAGE
+=========================== */
+
+.image-wrapper {
+  overflow: hidden;
+
+  border-radius: var(--radius-image);
+}
+
+.image {
+  position: absolute;
+
+  inset: 8px;
+
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+
+  object-fit: cover;
+
+  border-radius: var(--radius-image);
+
+  display: block;
+
+  transition: transform 0.6s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.08);
+}
+
+/* ===========================
+   CONTENT
+=========================== */
+
+.content {
+  position: relative;
+
+  z-index: 1;
+
+  padding: 220px 32px 32px;
+
+  color: white;
+
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.65));
+}
+
+/* ===========================
+   TYPOGRAPHY
+=========================== */
+
+h2 {
+  font-size: 2rem;
+
+  font-weight: 700;
+
+  margin-bottom: 0.4rem;
+
+  line-height: 1.2;
+}
+
+h3 {
+  margin-bottom: 20px;
+
+  color: #d1d5db;
+
+  font-weight: 500;
+
+  letter-spacing: 0.5px;
+}
+
+p {
+  font-size: 15px;
+
+  line-height: 1.7;
+
+  color: #e5e7eb;
+
+  display: -webkit-box;
+
+  -webkit-box-orient: vertical;
+
+  line-clamp: 3;
+
+  -webkit-line-clamp: 3;
+
+  overflow: hidden;
+}
+
+/* ===========================
+   READ MORE
+=========================== */
+
+.read-more {
+  display: inline-block;
+
+  margin: 12px 0 20px;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  color: white;
+
+  transition: all 0.3s ease;
+}
+
+.read-more:hover {
+  letter-spacing: 0.6px;
+}
+
+/* ===========================
+   DETAILS
+=========================== */
+
+.details {
+  display: flex;
+
+  gap: 24px;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 28px;
+}
+
+.item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+}
+
+.item em {
+  font-style: normal;
+
+  font-size: 0.95rem;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.buttons {
+  display: flex;
+
+  gap: 10px;
+}
+
+/* Search */
+
+.primary-btn {
+  flex: 1;
+
+  height: 50px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 8px;
+
+  cursor: pointer;
+
+  font-size: 15px;
+
+  font-family: inherit;
+
+  font-weight: 600;
+
+  color: var(--color-text);
+
+  background: white;
+
+  transition: all 0.3s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+
+  background: #f3f4f6;
+}
+
+/* Favorite */
+
+.icon-btn {
+  position: absolute;
+
+  top: 20px;
+
+  left: 20px;
+
+  width: 50px;
+
+  height: 50px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  display: grid;
+
+  place-items: center;
+
+  cursor: pointer;
+
+  color: white;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  backdrop-filter: blur(10px);
+
+  transition: all 0.3s ease;
+}
+
+.icon-btn:hover {
+  transform: scale(1.08);
+
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.icon-btn.active {
+  background: #ef4444;
+}
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media (min-width: 640px) {
+  .card {
+    flex-direction: row;
+
+    overflow: visible;
+
+    padding: 24px 16px;
+  }
+
+  .image-wrapper {
+    width: 50%;
+
+    min-width: 50%;
+
+    margin-left: -56px;
+
+    border-radius: var(--radius-image);
+
+    box-shadow: var(--shadow);
+  }
+
+  .image {
+    position: static;
+
+    inset: auto;
+
+    width: 100%;
+
+    height: 360px;
+
+    object-fit: cover;
+
+    border-radius: inherit;
+  }
+
+  .content {
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 0 32px;
+
+    color: var(--color-text);
+
+    background: transparent;
+  }
+
+  h3 {
+    color: var(--color-muted);
+  }
+
+  p {
+    color: var(--color-muted);
+
+    display: block;
+
+    overflow: visible;
+
+    margin-bottom: 24px;
+  }
+
+  .read-more {
+    display: none;
+  }
+
+  .primary-btn {
+    max-width: 220px;
+
+    color: white;
+
+    background: var(--color-primary);
+  }
+
+  .primary-btn:hover {
+    background: #000;
+  }
+
+  .icon-btn {
+    position: static;
+
+    min-width: 50px;
+
+    color: var(--color-primary);
+
+    background: rgba(0, 0, 0, 0.05);
+
+    backdrop-filter: none;
+  }
+
+  .icon-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 639px) {
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  .content {
+    padding: 190px 24px 24px;
+  }
+
+  .details {
+    gap: 18px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .primary-btn {
+    width: 100%;
+  }
+}
