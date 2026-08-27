@@ -1,0 +1,542 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ========================================
+   RESET
+======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(59, 130, 246, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(139, 92, 246, 0.12),
+      transparent 30%
+    ),
+    linear-gradient(135deg, #0f172a, #1e293b);
+
+  background-attachment: fixed;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  border: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+  --glass-bg: rgba(17, 24, 39, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.1);
+
+  position: fixed;
+
+  top: 16px;
+  left: 16px;
+  right: 16px;
+
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+
+  min-height: 72px;
+
+  padding: 0 24px;
+
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+
+  background: var(--glass-bg);
+
+  backdrop-filter: blur(20px) saturate(1.2);
+  -webkit-backdrop-filter: blur(20px) saturate(1.2);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* ========================================
+   BRAND
+======================================== */
+
+.brand {
+  display: flex;
+  align-items: center;
+
+  flex-shrink: 0;
+}
+
+.logo {
+  width: 38px;
+  height: 38px;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.brand:hover .logo {
+  transform: scale(1.08);
+  opacity: 0.9;
+}
+
+/* ========================================
+   MENU
+======================================== */
+
+.menu {
+  display: flex;
+  align-items: center;
+
+  margin-left: 28px;
+  padding-left: 24px;
+
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.menu-inner {
+  position: relative;
+}
+
+.main-menu {
+  display: flex;
+  align-items: center;
+
+  list-style: none;
+}
+
+.menu-item {
+  position: relative;
+}
+
+/* ========================================
+   MENU TRIGGER
+======================================== */
+
+.menu-trigger {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  min-height: 72px;
+
+  padding: 0 18px;
+
+  color: rgba(255, 255, 255, 0.68);
+
+  background: transparent;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease;
+}
+
+.menu-trigger:hover,
+.menu-item:hover .menu-trigger {
+  color: #fff;
+}
+
+.menu-trigger .material-symbols-outlined {
+  font-size: 18px;
+
+  transition: transform 0.25s ease;
+}
+
+.menu-item:hover .menu-trigger .material-symbols-outlined {
+  transform: rotate(180deg);
+}
+
+/* ========================================
+   CONTACT
+======================================== */
+
+.contact-link {
+  display: flex;
+  align-items: center;
+
+  min-height: 44px;
+
+  margin-left: 8px;
+  padding: 0 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  background: rgba(255, 255, 255, 0.04);
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.contact-link:hover {
+  color: #fff;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border-color: rgba(255, 255, 255, 0.14);
+
+  transform: translateY(-1px);
+}
+
+/* ========================================
+   SUBMENU
+======================================== */
+
+.submenu {
+  position: absolute;
+
+  top: calc(100% - 2px);
+  left: 50%;
+
+  width: 190px;
+
+  padding-top: 12px;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translate(-50%, -8px) scale(0.98);
+
+  transform-origin: top center;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease,
+    transform 0.2s ease;
+}
+
+.submenu::before {
+  content: "";
+
+  position: absolute;
+
+  top: 4px;
+  left: 50%;
+
+  width: 10px;
+  height: 10px;
+
+  transform: translateX(-50%) rotate(45deg);
+
+  background: rgba(25, 34, 52, 0.96);
+
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.submenu ul {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  padding: 10px;
+
+  list-style: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+
+  background: rgba(25, 34, 52, 0.96);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Show submenu */
+
+.menu-item:hover > .submenu,
+.menu-item:focus-within > .submenu {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translate(-50%, 0) scale(1);
+
+  pointer-events: auto;
+}
+
+/* ========================================
+   SUBMENU LINKS
+======================================== */
+
+.submenu a {
+  display: flex;
+  align-items: center;
+
+  min-height: 40px;
+
+  padding: 0 12px;
+
+  border-radius: 10px;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 13px;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    padding-left 0.2s ease;
+}
+
+.submenu a:hover,
+.submenu a:focus-visible {
+  color: #fff;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  padding-left: 16px;
+}
+
+.submenu a:focus-visible,
+.contact-link:focus-visible,
+.menu-trigger:focus-visible,
+.settings-button:focus-visible,
+.brand:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 3px;
+}
+
+/* ========================================
+   SETTINGS
+======================================== */
+
+.settings-button {
+  display: grid;
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+
+  margin-left: auto;
+
+  flex-shrink: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  background: rgba(255, 255, 255, 0.04);
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.settings-button:hover {
+  color: #fff;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  transform: rotate(30deg);
+}
+
+/* ========================================
+   PAGE CONTENT
+======================================== */
+
+.page-content {
+  min-height: 100vh;
+
+  display: grid;
+  place-items: center;
+
+  padding: 140px 24px 80px;
+
+  text-align: center;
+}
+
+.page-content section {
+  max-width: 720px;
+}
+
+.eyebrow {
+  display: inline-block;
+
+  margin-bottom: 16px;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 12px;
+  font-weight: 500;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+}
+
+.page-content h1 {
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.page-content h1 span {
+  display: block;
+
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.page-content p {
+  max-width: 520px;
+
+  margin: 24px auto 0;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 800px) {
+  .navbar {
+    padding: 0 16px;
+  }
+
+  .menu {
+    margin-left: 18px;
+    padding-left: 14px;
+  }
+
+  .menu-trigger {
+    padding: 0 10px;
+  }
+
+  .contact-link {
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    left: 10px;
+    right: 10px;
+
+    min-height: 64px;
+
+    border-radius: 16px;
+  }
+
+  .menu {
+    margin-left: auto;
+    padding-left: 0;
+
+    border-left: 0;
+  }
+
+  .menu-inner {
+    display: none;
+  }
+
+  .contact-link {
+    margin-left: 0;
+  }
+
+  .settings-button {
+    margin-left: 8px;
+  }
+
+  .logo {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+@media (max-width: 430px) {
+  .navbar {
+    padding: 0 12px;
+  }
+
+  .contact-link {
+    display: none;
+  }
+
+  .page-content {
+    padding-inline: 18px;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
