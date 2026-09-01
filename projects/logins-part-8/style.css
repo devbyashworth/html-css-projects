@@ -1,0 +1,501 @@
+:root {
+  color-scheme: dark;
+
+  --bg: #121212;
+  --text: #f0f0f0;
+  --field: #383838;
+  --accent: #be1e2d;
+  --surface: #1e1e1e;
+  --text-muted: #adadad;
+  --placeholder: #949494;
+  --border: rgb(255 255 255 / 10%);
+  --focus: rgb(190 30 45 / 45%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--bg);
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* =========================
+   Card
+========================= */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 500px);
+  padding: 8px;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  box-shadow: 0 25px 70px rgb(0 0 0 / 35%);
+}
+
+.hero,
+.form {
+  flex: 1 1 50%;
+}
+
+/* =========================
+   Hero
+========================= */
+
+.hero {
+  position: relative;
+  min-height: 200px;
+  overflow: hidden;
+  border-radius: 24px;
+  background: var(--accent);
+  isolation: isolate;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 30% 30%, rgb(255 255 255 / 12%), transparent 40%),
+    radial-gradient(circle at 70% 70%, rgb(0 0 0 / 15%), transparent 45%);
+}
+
+/* =========================
+   Animated Hearts
+========================= */
+
+.heart {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 15%;
+  opacity: 0;
+  transform-origin: center;
+  animation: radiate 5s linear infinite;
+}
+
+.heart path {
+  fill: #fff;
+}
+
+.heart-1 {
+  animation-delay: 0s;
+}
+
+.heart-2 {
+  animation-delay: -1s;
+}
+
+.heart-3 {
+  animation-delay: -2s;
+}
+
+.heart-4 {
+  animation-delay: -3s;
+}
+
+.heart-5 {
+  animation-delay: -4s;
+}
+
+@keyframes radiate {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  10% {
+    opacity: 0.15;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+/* =========================
+   Form
+========================= */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  padding: 30px 18px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  display: block;
+  width: 75px;
+  height: 75px;
+  margin-bottom: 12px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.form h1 {
+  margin-bottom: 12px;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* =========================
+   Social Buttons
+========================= */
+
+.socials {
+  display: flex;
+  gap: 8px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+  height: 52px;
+  padding: 0 14px;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  background: var(--field);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.social-btn img {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+}
+
+.social-btn span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.social-btn:hover {
+  background: #444;
+  border-color: rgb(255 255 255 / 18%);
+  transform: translateY(-1px);
+}
+
+.social-btn:active {
+  transform: translateY(0);
+}
+
+/* =========================
+   Divider
+========================= */
+
+.or {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.or::before {
+  content: "";
+  position: absolute;
+  inset: 50% 0 auto;
+  height: 1px;
+  background: rgb(255 255 255 / 15%);
+}
+
+.or span {
+  position: relative;
+  z-index: 1;
+  padding: 0 12px;
+  background: var(--surface);
+}
+
+/* =========================
+   Input Fields
+========================= */
+
+.field {
+  position: relative;
+  display: block;
+}
+
+.field input {
+  width: 100%;
+  height: 52px;
+  padding: 0 48px;
+  color: var(--text);
+  font: inherit;
+  font-size: 14px;
+  background: var(--field);
+  border: 1px solid transparent;
+  border-radius: 14px;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.field input::placeholder {
+  color: var(--placeholder);
+}
+
+.field input:focus {
+  background: #3d3d3d;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--focus);
+}
+
+.field > .icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  z-index: 1;
+  color: var(--placeholder);
+  font-size: 20px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: color 0.2s ease;
+}
+
+.field:focus-within > .icon {
+  color: var(--text);
+}
+
+/* =========================
+   Password Toggle
+========================= */
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  color: var(--placeholder);
+  background: transparent;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.password-toggle:hover {
+  color: var(--text);
+  background: rgb(255 255 255 / 8%);
+}
+
+.password-toggle .material-symbols-outlined {
+  font-size: 20px;
+}
+
+/* =========================
+   Form Options
+========================= */
+
+.form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 2px;
+  font-size: 12px;
+}
+
+.remember {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.remember input {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--accent);
+}
+
+.forgot-password,
+.signup-text a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.forgot-password:hover,
+.signup-text a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* =========================
+   Login Button
+========================= */
+
+.login-btn {
+  width: 100%;
+  height: 52px;
+  margin-top: 2px;
+  padding: 0 16px;
+  color: #1a1a1a;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  background: var(--text);
+  border: 0;
+  border-radius: 14px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.login-btn:hover {
+  background: #fff;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 20%);
+  transform: translateY(-1px);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+}
+
+/* =========================
+   Signup
+========================= */
+
+.signup-text {
+  margin-top: 4px;
+  color: var(--text-muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+/* =========================
+   Accessibility
+========================= */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media screen and (min-width: 485px) {
+  .card {
+    width: min(90vw, 740px);
+  }
+
+  .form {
+    padding-inline: 50px;
+  }
+
+  .socials {
+    flex-direction: column;
+  }
+
+  .extra-text {
+    display: inline;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .card {
+    flex-direction: row;
+    padding: 8px 0 8px 8px;
+  }
+
+  .hero {
+    min-height: 500px;
+  }
+
+  .form {
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .hero {
+    min-height: 180px;
+  }
+}
+
+/* =========================
+   Reduced Motion
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

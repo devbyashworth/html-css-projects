@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="Secure login page for your account." />
+
+    <title>Login</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Material Symbols -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="card">
+      <!-- Animated Hero -->
+      <div class="hero" aria-hidden="true">
+        <svg
+          class="heart heart-1"
+          viewBox="0 0 101.7 87.7"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M50.85 87.7L43.5 80.9C17.4 57.2 0 41.4 0 21.8
+            C0 9.9 9.4 0 21.3 0C28 0 34.5 3.1 38.7 8.1
+            C42.9 3.1 49.4 0 56.1 0C68 0 77.4 9.9 77.4 21.8
+            C77.4 41.4 60 57.2 33.9 80.9L26.6 87.7H50.85Z"
+          />
+        </svg>
+
+        <svg
+          class="heart heart-2"
+          viewBox="0 0 101.7 87.7"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M50.85 87.7L43.5 80.9C17.4 57.2 0 41.4 0 21.8
+            C0 9.9 9.4 0 21.3 0C28 0 34.5 3.1 38.7 8.1
+            C42.9 3.1 49.4 0 56.1 0C68 0 77.4 9.9 77.4 21.8
+            C77.4 41.4 60 57.2 33.9 80.9L26.6 87.7H50.85Z"
+          />
+        </svg>
+
+        <svg
+          class="heart heart-3"
+          viewBox="0 0 101.7 87.7"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M50.85 87.7L43.5 80.9C17.4 57.2 0 41.4 0 21.8
+            C0 9.9 9.4 0 21.3 0C28 0 34.5 3.1 38.7 8.1
+            C42.9 3.1 49.4 0 56.1 0C68 0 77.4 9.9 77.4 21.8
+            C77.4 41.4 60 57.2 33.9 80.9L26.6 87.7H50.85Z"
+          />
+        </svg>
+
+        <svg
+          class="heart heart-4"
+          viewBox="0 0 101.7 87.7"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M50.85 87.7L43.5 80.9C17.4 57.2 0 41.4 0 21.8
+            C0 9.9 9.4 0 21.3 0C28 0 34.5 3.1 38.7 8.1
+            C42.9 3.1 49.4 0 56.1 0C68 0 77.4 9.9 77.4 21.8
+            C77.4 41.4 60 57.2 33.9 80.9L26.6 87.7H50.85Z"
+          />
+        </svg>
+
+        <svg
+          class="heart heart-5"
+          viewBox="0 0 101.7 87.7"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M50.85 87.7L43.5 80.9C17.4 57.2 0 41.4 0 21.8
+            C0 9.9 9.4 0 21.3 0C28 0 34.5 3.1 38.7 8.1
+            C42.9 3.1 49.4 0 56.1 0C68 0 77.4 9.9 77.4 21.8
+            C77.4 41.4 60 57.2 33.9 80.9L26.6 87.7H50.85Z"
+          />
+        </svg>
+      </div>
+
+      <!-- Login Form -->
+      <form class="form" action="#" method="post">
+        <div class="logo">
+          <img src="./dev.png" alt="Company logo" width="75" height="75" />
+        </div>
+
+        <h1>Login to your account</h1>
+
+        <!-- Social Login -->
+        <div class="socials">
+          <button type="button" class="social-btn">
+            <img
+              src="./facebook.png"
+              alt=""
+              width="24"
+              height="24"
+              aria-hidden="true"
+            />
+
+            <span> <span class="extra-text">Login with </span>Facebook </span>
+          </button>
+
+          <button type="button" class="social-btn">
+            <img
+              src="./google.png"
+              alt=""
+              width="24"
+              height="24"
+              aria-hidden="true"
+            />
+
+            <span> <span class="extra-text">Login with </span>Google </span>
+          </button>
+        </div>
+
+        <!-- Divider -->
+        <div class="or" aria-hidden="true">
+          <span>Or</span>
+        </div>
+
+        <!-- Email -->
+        <div class="field">
+          <label for="email" class="sr-only">Email address</label>
+
+          <span class="material-symbols-outlined icon" aria-hidden="true">
+            mail
+          </span>
+
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+            autocomplete="email"
+            inputmode="email"
+            required
+          />
+        </div>
+
+        <!-- Password -->
+        <div class="field">
+          <label for="password" class="sr-only">Password</label>
+
+          <span class="material-symbols-outlined icon" aria-hidden="true">
+            lock
+          </span>
+
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            autocomplete="current-password"
+            minlength="8"
+            required
+          />
+
+          <button
+            type="button"
+            class="password-toggle"
+            aria-label="Show password"
+            aria-pressed="false"
+          >
+            <span class="material-symbols-outlined" aria-hidden="true">
+              visibility
+            </span>
+          </button>
+        </div>
+
+        <div class="form-options">
+          <label class="remember">
+            <input type="checkbox" name="remember" />
+            <span>Remember me</span>
+          </label>
+
+          <a href="#" class="forgot-password"> Forgot password? </a>
+        </div>
+
+        <button type="submit" class="login-btn">Login</button>
+
+        <p class="signup-text">
+          Don't have an account?
+          <a href="#">Create one</a>
+        </p>
+      </form>
+    </main>
+
+    <script>
+      const passwordInput = document.querySelector("#password");
+      const passwordToggle = document.querySelector(".password-toggle");
+      const toggleIcon = passwordToggle.querySelector(
+        ".material-symbols-outlined",
+      );
+
+      passwordToggle.addEventListener("click", () => {
+        const isPassword = passwordInput.type === "password";
+
+        passwordInput.type = isPassword ? "text" : "password";
+
+        passwordToggle.setAttribute(
+          "aria-label",
+          isPassword ? "Hide password" : "Show password",
+        );
+
+        passwordToggle.setAttribute("aria-pressed", String(isPassword));
+
+        toggleIcon.textContent = isPassword ? "visibility_off" : "visibility";
+      });
+    </script>
+  </body>
+</html>
