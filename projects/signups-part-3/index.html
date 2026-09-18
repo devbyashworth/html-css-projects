@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signups</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+
+    <!-- Material Symbols -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+
+    <style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ===========================
+   RESET
+=========================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===========================
+   VISUALLY HIDDEN
+   Screen-reader-only field labels, and the checkbox that
+   drives the whole login/register toggle - hidden from
+   view but still focusable so keyboard users can reach it.
+=========================== */
+
+.sr-only,
+.toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===========================
+   BODY
+=========================== */
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+
+  background: linear-gradient(135deg, #1b1b1b 50%, #353535 50%);
+}
+
+.card {
+  --color-primary: #1b1b1b;
+  --color-border: #d3d3dc;
+  --color-muted: #a7a7ad;
+  --color-card: #fefefe;
+
+  position: relative;
+  width: 660px;
+  height: 440px;
+  overflow: hidden;
+  border-radius: 32px;
+  background-color: var(--color-card);
+  box-shadow: 0 12px 80px rgba(0, 0, 0, 0.12);
+  transform: scale(clamp(0.5, calc((100vw - 64px) / 660), 1));
+}
+
+/* ===========================
+   DIAGONAL BACKGROUND
+=========================== */
+
+.card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 860px;
+  height: 440px;
+  rotate: -45deg;
+  transform-origin: 0% 100%;
+  background-color: var(--color-primary);
+}
+
+.card-bg-2 {
+  right: 0;
+  left: auto;
+  opacity: 0;
+  rotate: 0deg;
+  transform-origin: 100% 100%;
+}
+
+.toggle:not(:checked) ~ .card-bg-1 {
+  animation: card-bg-register 1.2s both;
+}
+
+.toggle:checked ~ .card-bg-1 {
+  animation: card-bg-login 1.2s both;
+}
+
+.toggle:not(:checked) ~ .card-bg-2 {
+  animation: card-bg-2-register 1.2s both;
+}
+
+.toggle:checked ~ .card-bg-2 {
+  animation: card-bg-2-login 1.2s both;
+}
+
+/* ===========================
+   SWITCH BUTTONS
+=========================== */
+
+.switch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 4;
+  width: 50%;
+  padding-top: 64px;
+  align-content: start;
+  justify-content: center;
+}
+
+.switch.login {
+  translate: 100% 0;
+}
+
+.switch label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: 32px;
+  opacity: 0;
+  color: #fefefe;
+  border: 1px solid rgb(249 249 249 / 55%);
+  pointer-events: none;
+  transition:
+    color 0.25s,
+    opacity 0.3s,
+    translate 0.3s,
+    background 0.25s,
+    border-color 0.25s;
+}
+
+.switch.register label {
+  translate: -100% 0;
+}
+
+.switch.login label {
+  translate: 100% 0;
+}
+
+.toggle:not(:checked) ~ .switch.login label,
+.toggle:checked ~ .switch.register label {
+  opacity: 1;
+  translate: 0;
+  pointer-events: auto;
+  transition:
+    color 0.25s,
+    background 0.25s,
+    opacity 0.3s 0.85s,
+    border-color 0.25s,
+    translate 0.3s 0.85s;
+}
+
+.switch label:hover {
+  border-color: #f9f9f9;
+  color: var(--color-primary);
+  background-color: #f9f9f9;
+}
+
+.switch label .material-symbols-outlined {
+  transition: translate 0.25s;
+}
+
+.switch label:hover .material-symbols-outlined {
+  translate: 4px 0;
+}
+
+.toggle:focus-visible:not(:checked) ~ .switch.login label,
+.toggle:focus-visible:checked ~ .switch.register label {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+/* ===========================
+   FORMS
+=========================== */
+
+.form {
+  position: absolute;
+  inset: 0;
+  width: 50%;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+}
+
+.form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 0;
+  visibility: hidden;
+  width: 270px;
+  transition:
+    opacity 0.3s,
+    translate 0.3s,
+    visibility 0s linear 0.3s;
+}
+
+.form.register {
+  translate: 100% 0;
+}
+
+.form.register form {
+  translate: 320px 0;
+}
+
+.form.login form {
+  translate: -320px 0;
+}
+
+.toggle:not(:checked) ~ .form.login form,
+.toggle:checked ~ .form.register form {
+  opacity: 1;
+  visibility: visible;
+  translate: 0;
+  transition:
+    opacity 0.4s 0.8s,
+    translate 0.4s 0.8s,
+    visibility 0s linear 0.8s;
+}
+
+/* ===========================
+   FORM CONTENT
+=========================== */
+
+.form form h2 {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+}
+
+.social-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 14px;
+  background-color: transparent;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    background-color 0.2s,
+    translate 0.2s;
+}
+
+.social-btn:hover {
+  border-color: var(--color-primary);
+  background-color: #f7f7f8;
+}
+
+.social-btn:active {
+  translate: 0 1px;
+}
+
+.social-btn img {
+  width: 18px;
+  height: 18px;
+}
+
+.social-btn i {
+  font-size: 15px;
+}
+
+.or {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+.or::before,
+.or::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.field {
+  position: relative;
+}
+
+.field .icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  translate: 0 -50%;
+  font-size: 15px;
+  color: var(--color-muted);
+  pointer-events: none;
+  transition: color 0.2s;
+}
+
+.field input {
+  width: 100%;
+  height: 48px;
+  padding: 0 44px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 14px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--color-primary);
+  background-color: transparent;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.field input::placeholder {
+  color: var(--color-muted);
+}
+
+.field input:hover {
+  border-color: #b9b9c4;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgb(27 27 27 / 8%);
+}
+
+.field:focus-within .icon {
+  color: var(--color-primary);
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  translate: 0 -50%;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  color: var(--color-muted);
+  cursor: pointer;
+  transition:
+    color 0.2s,
+    background-color 0.2s;
+}
+
+.password-toggle:hover {
+  color: var(--color-primary);
+  background-color: #f2f2f4;
+}
+
+.password-toggle .material-symbols-outlined {
+  font-size: 20px;
+}
+
+.form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.remember {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.remember input {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.forgot-password {
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.forgot-password:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.login-btn,
+.register-btn {
+  height: 50px;
+  border: none;
+  border-radius: 14px;
+  background-color: var(--color-primary);
+  color: #fefefe;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    box-shadow 0.2s,
+    translate 0.2s;
+}
+
+.login-btn:hover,
+.register-btn:hover {
+  background-color: #000;
+  box-shadow: 0 8px 20px rgb(27 27 27 / 25%);
+}
+
+.login-btn:active,
+.register-btn:active {
+  translate: 0 1px;
+  box-shadow: none;
+}
+
+.social-btn:focus-visible,
+.password-toggle:focus-visible,
+.forgot-password:focus-visible,
+.login-btn:focus-visible,
+.register-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+@keyframes card-bg-register {
+  0% {
+    rotate: -45deg;
+  }
+  50% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    rotate: 0deg;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes card-bg-login {
+  0% {
+    opacity: 0;
+    rotate: 0deg;
+  }
+  50% {
+    rotate: 0deg;
+    opacity: 0;
+  }
+  50%,
+  100% {
+    rotate: 0;
+  }
+  50.01%,
+  100% {
+    opacity: 1;
+  }
+  100% {
+    rotate: -45deg;
+  }
+}
+
+@keyframes card-bg-2-register {
+  0%,
+  50% {
+    rotate: 0;
+    opacity: 0;
+  }
+  50.01% {
+    opacity: 1;
+    rotate: 0deg;
+  }
+  100% {
+    opacity: 1;
+    rotate: 45deg;
+  }
+}
+
+@keyframes card-bg-2-login {
+  0% {
+    rotate: 45deg;
+    opacity: 1;
+  }
+  50%,
+  100% {
+    rotate: 0deg;
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ===========================
+   REDUCED MOTION
+=========================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .toggle:not(:checked) ~ .card-bg-1 {
+    animation: none;
+    opacity: 0;
+    rotate: 0deg;
+  }
+  .toggle:checked ~ .card-bg-1 {
+    animation: none;
+    opacity: 1;
+    rotate: -45deg;
+  }
+  .toggle:not(:checked) ~ .card-bg-2 {
+    animation: none;
+    opacity: 1;
+    rotate: 45deg;
+  }
+  .toggle:checked ~ .card-bg-2 {
+    animation: none;
+    opacity: 0;
+    rotate: 0deg;
+  }
+
+  .switch label,
+  .switch label .material-symbols-outlined,
+  .form form,
+  .social-btn,
+  .field input,
+  .password-toggle,
+  .forgot-password,
+  .login-btn,
+  .register-btn {
+    transition: none;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <input type="checkbox" id="toggle" class="toggle" />
+
+      <div class="card-bg card-bg-1"></div>
+      <div class="card-bg card-bg-2"></div>
+
+      <div class="switch login">
+        <label for="toggle">
+          Sign Up
+          <span class="material-symbols-outlined"> arrow_forward </span></label
+        >
+      </div>
+      <div class="switch register">
+        <label for="toggle">
+          Login
+          <span class="material-symbols-outlined"> arrow_forward </span></label
+        >
+      </div>
+
+      <div class="form login">
+        <form action="#">
+          <h2>Login</h2>
+          <!-- Social Login -->
+          <div class="socials">
+            <button type="button" class="social-btn">
+              <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+              <span>Facebook</span>
+            </button>
+
+            <button type="button" class="social-btn">
+              <i class="fa-brands fa-google" aria-hidden="true"></i>
+              <span>Google</span>
+            </button>
+          </div>
+
+          <!-- Divider -->
+          <div class="or" aria-hidden="true">
+            <span>Or</span>
+          </div>
+
+          <div class="fields">
+            <div class="field">
+              <i class="icon fa-solid fa-envelope" aria-hidden="true"></i>
+              <label class="sr-only" for="login-email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="login-email"
+                placeholder="Email"
+                autocomplete="email"
+                required
+              />
+            </div>
+            <div class="field">
+              <i class="icon fa-solid fa-lock" aria-hidden="true"></i>
+              <label class="sr-only" for="login-password">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="login-password"
+                placeholder="Password"
+                autocomplete="current-password"
+                required
+              />
+              <button
+                type="button"
+                class="password-toggle"
+                aria-label="Show password"
+              >
+                <span class="material-symbols-outlined" aria-hidden="true"
+                  >visibility</span
+                >
+              </button>
+            </div>
+          </div>
+
+          <div class="form-options">
+            <label class="remember">
+              <input type="checkbox" name="remember" />
+              <span>Remember me</span>
+            </label>
+
+            <a href="#" class="forgot-password">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="login-btn">Login</button>
+        </form>
+      </div>
+
+      <div class="form register">
+        <form action="#">
+          <h2>Signup</h2>
+          <!-- Social Login -->
+          <div class="socials">
+            <button type="button" class="social-btn">
+              <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+              <span>Facebook</span>
+            </button>
+
+            <button type="button" class="social-btn">
+              <i class="fa-brands fa-google" aria-hidden="true"></i>
+              <span>Google</span>
+            </button>
+          </div>
+
+          <!-- Divider -->
+          <div class="or" aria-hidden="true">
+            <span>Or</span>
+          </div>
+
+          <div class="fields">
+            <div class="field">
+              <i class="icon fa-solid fa-user" aria-hidden="true"></i>
+              <label class="sr-only" for="register-name">Full name</label>
+              <input
+                type="text"
+                name="name"
+                id="register-name"
+                placeholder="Full Name"
+                autocomplete="name"
+                required
+              />
+            </div>
+            <div class="field">
+              <i class="icon fa-solid fa-envelope" aria-hidden="true"></i>
+              <label class="sr-only" for="register-email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="register-email"
+                placeholder="Email"
+                autocomplete="email"
+                required
+              />
+            </div>
+            <div class="field">
+              <i class="icon fa-solid fa-lock" aria-hidden="true"></i>
+              <label class="sr-only" for="register-password">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="register-password"
+                placeholder="Password"
+                autocomplete="new-password"
+                minlength="8"
+                required
+              />
+              <button
+                type="button"
+                class="password-toggle"
+                aria-label="Show password"
+              >
+                <span class="material-symbols-outlined" aria-hidden="true"
+                  >visibility</span
+                >
+              </button>
+            </div>
+          </div>
+
+          <button type="submit" class="register-btn">Sign Up</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll(".password-toggle").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const input = btn.closest(".field").querySelector("input");
+          const icon = btn.querySelector(".material-symbols-outlined");
+          const show = input.type === "password";
+          input.type = show ? "text" : "password";
+          icon.textContent = show ? "visibility_off" : "visibility";
+          btn.setAttribute("aria-label", show ? "Hide password" : "Show password");
+        });
+      });
+    </script>
+  </body>
+</html>
