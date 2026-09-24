@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logins</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Material Symbols -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <input
+        type="checkbox"
+        name="toggle"
+        id="toggle"
+        class="toggle sr-only"
+        aria-label="Switch between login and sign up"
+      />
+      <div class="card-bg"></div>
+
+      <div class="hero register">
+        <h2>New Here?</h2>
+        <p>Create an account to get started.</p>
+        <div class="socials">
+          <a href="#" aria-label="Continue with Google"><i class="fab fa-google" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Continue with Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Continue with Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <label for="toggle">LOGIN</label>
+      </div>
+
+      <div class="form register">
+        <h2>Sign Up</h2>
+        <form action="#">
+          <div class="fields">
+            <div class="field">
+              <i class="icon fa-solid fa-user" aria-hidden="true"></i>
+              <label class="sr-only" for="register-name">Full name</label>
+              <input
+                type="text"
+                name="name"
+                id="register-name"
+                placeholder="Full Name"
+                autocomplete="name"
+                required
+              />
+            </div>
+            <div class="field">
+              <i class="icon fa-solid fa-envelope" aria-hidden="true"></i>
+              <label class="sr-only" for="register-email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="register-email"
+                placeholder="Email"
+                autocomplete="email"
+                required
+              />
+            </div>
+            <div class="field">
+              <i class="icon fa-solid fa-lock" aria-hidden="true"></i>
+              <label class="sr-only" for="register-password">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="register-password"
+                placeholder="Password"
+                autocomplete="new-password"
+                minlength="8"
+                required
+              />
+              <button type="button" class="password-toggle" aria-label="Show password">
+                <span class="material-symbols-outlined" aria-hidden="true">visibility</span>
+              </button>
+            </div>
+          </div>
+
+          <button type="submit" class="register-btn">Sign Up</button>
+
+          <!-- Divider -->
+          <div class="or" aria-hidden="true">
+            <span>Or</span>
+          </div>
+
+          <!-- Social Login -->
+          <div class="socials">
+            <button type="button" class="social-btn">
+              <img
+                src="./facebook.png"
+                alt=""
+                width="24"
+                height="24"
+                aria-hidden="true"
+              />
+              <span> <span class="extra-text">Login with </span>Facebook </span>
+            </button>
+
+            <button type="button" class="social-btn">
+              <img
+                src="./google.png"
+                alt=""
+                width="24"
+                height="24"
+                aria-hidden="true"
+              />
+              <span> <span class="extra-text">Login with </span>Google </span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="hero login">
+        <h2>Hello there!</h2>
+        <p>Welcome back to your account.</p>
+        <div class="socials">
+          <a href="#" aria-label="Continue with Google"><i class="fab fa-google" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Continue with Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Continue with Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <label for="toggle">SIGN UP</label>
+      </div>
+
+      <div class="form login">
+        <h2>Login</h2>
+        <form action="#">
+          <div class="fields">
+            <div class="field">
+              <i class="icon fa-solid fa-envelope" aria-hidden="true"></i>
+              <label class="sr-only" for="login-email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="login-email"
+                placeholder="Email"
+                autocomplete="email"
+                required
+              />
+            </div>
+            <div class="field">
+              <i class="icon fa-solid fa-lock" aria-hidden="true"></i>
+              <label class="sr-only" for="login-password">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="login-password"
+                placeholder="Password"
+                autocomplete="current-password"
+                required
+              />
+              <button type="button" class="password-toggle" aria-label="Show password">
+                <span class="material-symbols-outlined" aria-hidden="true">visibility</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-options">
+            <label class="remember">
+              <input type="checkbox" name="remember" />
+              <span>Remember me</span>
+            </label>
+
+            <a href="#" class="forgot-password">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="login-btn">Login</button>
+
+          <!-- Divider -->
+          <div class="or" aria-hidden="true">
+            <span>Or</span>
+          </div>
+
+          <!-- Social Login -->
+          <div class="socials">
+            <button type="button" class="social-btn">
+              <img
+                src="./facebook.png"
+                alt=""
+                width="24"
+                height="24"
+                aria-hidden="true"
+              />
+              <span> <span class="extra-text">Login with </span>Facebook </span>
+            </button>
+
+            <button type="button" class="social-btn">
+              <img
+                src="./google.png"
+                alt=""
+                width="24"
+                height="24"
+                aria-hidden="true"
+              />
+              <span> <span class="extra-text">Login with </span>Google </span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll(".password-toggle").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const input = btn.closest(".field").querySelector("input");
+          const icon = btn.querySelector(".material-symbols-outlined");
+          const isPassword = input.type === "password";
+
+          input.type = isPassword ? "text" : "password";
+          icon.textContent = isPassword ? "visibility_off" : "visibility";
+          btn.setAttribute("aria-label", isPassword ? "Hide password" : "Show password");
+        });
+      });
+    </script>
+  </body>
+</html>
