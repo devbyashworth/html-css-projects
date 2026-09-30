@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dashboard Sidebar</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+
+  <body>
+    <!-- Theme state -->
+    <input type="checkbox" name="theme" id="theme" class="theme-toggle" />
+
+    <div class="page">
+      <aside class="sidebar" aria-label="Dashboard sidebar">
+        <!-- Profile -->
+        <div class="profile">
+          <span class="avatar avatar-initials" aria-hidden="true">AL</span>
+
+          <div class="details">
+            <p class="name">Ashley Lee</p>
+            <p class="role">Admin</p>
+          </div>
+
+          <i
+            class="icon chevron"
+            data-lucide="chevron-down"
+            aria-hidden="true"
+          ></i>
+        </div>
+
+        <!-- Search -->
+        <div class="search">
+          <input
+            type="search"
+            placeholder="Search Dashboard"
+            aria-label="Search dashboard"
+          />
+
+          <i class="icon" data-lucide="search" aria-hidden="true"></i>
+        </div>
+
+        <!-- Main navigation -->
+        <nav aria-label="Main navigation">
+          <input type="radio" name="nav" id="nav-1" class="nav-radio" checked />
+
+          <label for="nav-1" class="item">
+            <i
+              class="icon"
+              data-lucide="layout-dashboard"
+              aria-hidden="true"
+            ></i>
+
+            <p>Dashboard</p>
+          </label>
+
+          <input type="radio" name="nav" id="nav-2" class="nav-radio" />
+
+          <label for="nav-2" class="item">
+            <i class="icon" data-lucide="life-buoy" aria-hidden="true"></i>
+
+            <p>Support</p>
+          </label>
+
+          <input type="radio" name="nav" id="nav-3" class="nav-radio" />
+
+          <label for="nav-3" class="item">
+            <i class="icon" data-lucide="users" aria-hidden="true"></i>
+
+            <p>Customers</p>
+          </label>
+
+          <input type="radio" name="nav" id="nav-4" class="nav-radio" />
+
+          <label for="nav-4" class="item">
+            <i class="icon" data-lucide="ticket" aria-hidden="true"></i>
+
+            <p>Tickets</p>
+          </label>
+
+          <hr />
+
+          <input type="radio" name="nav" id="nav-5" class="nav-radio" />
+
+          <label for="nav-5" class="item">
+            <i class="icon" data-lucide="list-checks" aria-hidden="true"></i>
+
+            <span class="badge" aria-label="6 tasks">6</span>
+
+            <p>Tasks</p>
+          </label>
+
+          <input type="radio" name="nav" id="nav-6" class="nav-radio" />
+
+          <label for="nav-6" class="item">
+            <i class="icon" data-lucide="folder-kanban" aria-hidden="true"></i>
+
+            <p>Projects</p>
+          </label>
+
+          <!-- <input type="radio" name="nav" id="nav-7" class="nav-radio" />
+
+          <label for="nav-7" class="item">
+            <i class="icon" data-lucide="app-window" aria-hidden="true"></i>
+
+            <p>Applications</p>
+          </label> -->
+
+          <input type="radio" name="nav" id="nav-8" class="nav-radio" />
+
+          <label for="nav-8" class="item">
+            <i class="icon" data-lucide="user-cog" aria-hidden="true"></i>
+
+            <p>User Management</p>
+          </label>
+        </nav>
+
+        <!-- Sidebar actions -->
+        <div class="actions" aria-label="Sidebar actions">
+          <label
+            for="theme"
+            class="action"
+            title="Toggle theme"
+            aria-label="Toggle theme"
+          >
+            <i class="icon moon" data-lucide="moon" aria-hidden="true"></i>
+
+            <i class="icon sun" data-lucide="sun" aria-hidden="true"></i>
+          </label>
+
+          <button
+            type="button"
+            class="action"
+            title="Settings"
+            aria-label="Settings"
+          >
+            <i class="icon" data-lucide="settings" aria-hidden="true"></i>
+          </button>
+
+          <button type="button" class="action" title="Add" aria-label="Add">
+            <i class="icon" data-lucide="plus" aria-hidden="true"></i>
+          </button>
+
+          <button
+            type="button"
+            class="action"
+            title="Logout"
+            aria-label="Logout"
+          >
+            <i class="icon" data-lucide="log-out" aria-hidden="true"></i>
+          </button>
+        </div>
+      </aside>
+    </div>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
