@@ -1,0 +1,235 @@
+/* =========================
+   RESET
+========================= */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BASE
+========================= */
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  background: #121212;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: rgb(255 255 255 / 95%);
+}
+
+:is(button, label) {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+}
+
+/* =========================
+   SIDEBAR SHELL
+========================= */
+
+.sidebar {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 260px;
+  padding: 0 10px;
+  border-radius: 34px;
+  background: rgb(255 255 255 / 6%);
+  backdrop-filter: blur(30px);
+  box-shadow:
+    inset 0 1px 1px rgb(255 255 255 / 35%),
+    inset 0 -1px 1px rgb(255 255 255 / 10%),
+    inset 0 0 60px rgb(255 255 255 / 6%),
+    0 24px 60px rgb(0 0 0 / 25%);
+}
+
+.sidebar header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 72px;
+  flex-shrink: 0;
+  padding: 10px 16px 0;
+  border-bottom: 1px solid rgb(255 255 255 / 8%);
+}
+
+.sidebar header img {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.sidebar header h1 {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  font-size: 18px;
+}
+
+.chevron {
+  width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  transition: rotate 0.3s;
+}
+
+.menu-icon {
+  width: 18px;
+  height: 18px;
+  margin-left: auto;
+  color: rgb(255 255 255 / 95%);
+}
+
+/* =========================
+   NAV
+========================= */
+
+.sidebar ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.nav {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.nav::-webkit-scrollbar {
+  display: none;
+}
+
+.nav > li:last-child {
+  margin-top: auto;
+  margin-bottom: 16px;
+}
+
+/* visually hidden rather than display:none, so the radio can still
+   be tabbed to and selected with the keyboard */
+.nav-radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sidebar :is(button, label) {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  height: 50px;
+  padding: 0 16px;
+  border-radius: 10px;
+  color: rgb(255 255 255 / 95%);
+  transition: background-color 0.3s;
+}
+
+.sidebar :is(button, label) p {
+  margin: 0;
+  flex: 1 1 auto;
+}
+
+.nav-radio:checked + label {
+  background: rgb(255 255 255 / 10%);
+}
+
+.nav-radio:not(:checked) + label:hover,
+.sub-menu button:hover {
+  background: rgb(255 255 255 / 3%);
+}
+
+.nav-radio:checked + label .chevron {
+  rotate: -180deg;
+}
+
+.nav-radio:focus-visible + label,
+.sub-menu button:focus-visible {
+  outline: 2px solid rgb(255 255 255 / 60%);
+  outline-offset: -2px;
+}
+
+/* =========================
+   SUB-MENUS
+========================= */
+
+.sub-menu {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s;
+}
+
+.sub-menu > ul {
+  overflow: hidden;
+}
+
+.nav-radio:checked ~ .sub-menu {
+  grid-template-rows: 1fr;
+}
+
+.sub-menu button {
+  padding-left: 48px;
+}
+
+.sub-menu button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 24px;
+  translate: 0 -50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: rgb(255 255 255 / 35%);
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .chevron,
+  .sub-menu,
+  .sidebar :is(button, label) {
+    transition: none;
+  }
+}
