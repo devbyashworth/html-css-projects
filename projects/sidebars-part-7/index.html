@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A responsive developer dashboard sidebar."
+    />
+    <meta name="theme-color" content="#fefefe" />
+    <title>Developer Dashboard</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Phosphor Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <aside class="sidebar" id="sidebar" aria-label="Main sidebar">
+      <!-- Brand and mobile toggle -->
+      <div class="sidebar-header">
+        <a class="brand" href="#dashboard" aria-label="Home">
+          <span class="brand-logo" aria-hidden="true">
+            <i class="ph ph-circles-three-plus"></i>
+          </span>
+          <span class="brand-name">Workspace</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-label="Expand sidebar"
+          aria-expanded="false"
+          aria-controls="sidebar"
+        >
+          <i class="ph ph-list" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <!-- User profile -->
+      <div class="profile">
+        <span class="avatar online">
+          <img src="./dev_by_ashworth.png" alt="Elle S. profile" />
+        </span>
+
+        <div class="details">
+          <p class="name">Elle S.</p>
+          <p class="role">Developer</p>
+        </div>
+      </div>
+
+      <!-- Search -->
+      <form class="search" role="search" id="search-form">
+        <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+        <input
+          type="search"
+          id="search"
+          name="search"
+          placeholder="Search pages..."
+          aria-label="Search navigation pages"
+          autocomplete="off"
+        />
+      </form>
+
+      <p class="section-label">PAGES</p>
+
+      <!-- Main navigation -->
+      <nav class="navigation" aria-label="Main navigation">
+        <ul class="nav">
+          <li>
+            <a
+              class="nav-link active"
+              href="#dashboard"
+              aria-current="page"
+              title="Dashboard"
+            >
+              <i class="ph ph-squares-four" aria-hidden="true"></i>
+              <span class="nav-text">Dashboard</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="nav-link" href="#tasks" title="Tasks">
+              <i class="ph ph-check-square" aria-hidden="true"></i>
+              <span class="nav-text">Tasks</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="nav-link" href="#notifications" title="Notifications">
+              <i class="ph ph-bell" aria-hidden="true"></i>
+              <span class="nav-text">Notifications</span>
+              <span
+                class="notification-dot"
+                aria-label="New notifications"
+              ></span>
+            </a>
+          </li>
+
+          <li>
+            <a class="nav-link" href="#reports" title="Reports">
+              <i class="ph ph-chart-bar" aria-hidden="true"></i>
+              <span class="nav-text">Reports</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="nav-link" href="#documents" title="Documents">
+              <i class="ph ph-file-text" aria-hidden="true"></i>
+              <span class="nav-text">Documents</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="nav-link" href="#inbox" title="Inbox">
+              <i class="ph ph-tray" aria-hidden="true"></i>
+              <span class="nav-text">Inbox</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="nav-link" href="#settings" title="Settings">
+              <i class="ph ph-gear" aria-hidden="true"></i>
+              <span class="nav-text">Settings</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Team -->
+      <section class="team-section" aria-labelledby="team-heading">
+        <h2 class="section-label" id="team-heading">TEAM</h2>
+
+        <ul class="team-list">
+          <li>
+            <a class="team-member" href="#team-elle" title="Elle S.">
+              <span class="avatar online">
+                <img src="./dev_by_ashworth.png" alt="" />
+              </span>
+              <span class="details">
+                <span class="name">Elle S.</span>
+                <span class="role">Developer</span>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a class="team-member" href="#team-james" title="James K.">
+              <span class="avatar">
+                <span class="avatar-initials">JK</span>
+              </span>
+              <span class="details">
+                <span class="name">James K.</span>
+                <span class="role">UI Designer</span>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a class="team-member" href="#team-sarah" title="Sarah M.">
+              <span class="avatar">
+                <span class="avatar-initials">SM</span>
+              </span>
+              <span class="details">
+                <span class="name">Sarah M.</span>
+                <span class="role">Project Manager</span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Sidebar footer -->
+      <footer class="sidebar-footer">
+        <button
+          class="theme-switch"
+          id="theme-toggle"
+          type="button"
+          aria-pressed="false"
+          aria-label="Switch to dark mode"
+        >
+          <i class="ph ph-moon" aria-hidden="true"></i>
+          <span class="theme-label">Dark mode</span>
+          <span class="switch" aria-hidden="true"></span>
+        </button>
+      </footer>
+    </aside>
+
+    <!-- Demo content; replace with your actual application pages -->
+    <main class="main-content" id="main-content">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">WORKSPACE</p>
+          <h1 id="page-title">Dashboard</h1>
+          <p class="page-description">Welcome back. Here's your workspace.</p>
+        </div>
+
+        <span class="header-avatar">
+          <img src="./dev_by_ashworth.png" alt="Your profile" />
+        </span>
+      </header>
+
+      <section class="content-card" aria-live="polite">
+        <i class="ph ph-squares-four card-icon" aria-hidden="true"></i>
+        <h2 id="content-title">Welcome to your dashboard</h2>
+        <p id="content-description">
+          Select a page from the sidebar to preview its content.
+        </p>
+      </section>
+    </main>
+
+    <p class="search-empty" id="search-empty" hidden>
+      No matching pages found.
+    </p>
+  </body>
+</html>
