@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Footer</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Phosphor Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <footer>
+      <div class="background">
+        <!-- please create svg  -->
+      </div>
+      <section>
+        <ul class="socials">
+          <li>
+            <a
+              href="#"
+              class="fa-brands fa-github"
+              data-tooltip="github"
+              aria-label="GitHub"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="fa-brands fa-codepen"
+              data-tooltip="codepen"
+              aria-label="CodePen"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="fa-brands fa-linkedin"
+              data-tooltip="linkedin"
+              aria-label="LinkedIn"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="fa-brands fa-twitter"
+              data-tooltip="twitter"
+              aria-label="Twitter"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="fa-brands fa-instagram"
+              data-tooltip="instagram"
+              aria-label="Instagram"
+            ></a>
+          </li>
+        </ul>
+        <ul class="links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Skills</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <a href="#" class="label">
+          &copy; <span id="year"></span> All Rights Reserved</a
+        >
+      </section>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

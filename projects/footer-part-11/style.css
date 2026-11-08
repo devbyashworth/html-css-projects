@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ==========================================
+   RESET
+========================================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  color: #dedfed;
+  background: linear-gradient(#15203a, #121418);
+  font-family: "Euclid Circular A", "Poppins", sans-serif;
+}
+
+.background {
+  position: absolute;
+  right: 0;
+  left: 50%;
+  bottom: 0;
+  translate: -50% 0;
+  z-index: -1;
+  width: 150vw;
+  height: 400px;
+  overflow: hidden;
+}
+
+.svg {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transform: scale(2.5);
+  transform-origin: bottom;
+}
+
+ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.socials {
+  gap: 10px;
+}
+
+.socials a {
+  display: grid;
+  width: 400px;
+  height: 400px;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: scale 0.25s;
+  font-size: 24px;
+  position: relative;
+  background: rgb(11 89 255 / 26%);
+  backdrop-filter: blur(10px);
+}
+
+.socials a:hover {
+  scale: 1 1;
+}
+
+.socials a::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  translate: -50% 6px;
+  opacity: 0;
+  line-height: 1;
+  font-size: 12px;
+  color: #eceefc;
+  padding: 6px 10px;
+  border-radius: 8px;
+  white-space: nowrap;
+  pointer-events: none;
+  font-family: inherit;
+  background: rgb(8 11 18 / 94%);
+  transition: opacity 0.25s translate 0.25s;
+}
+
+.socials a:hover {
+  opacity: 1;
+  translate: -50% 0;
+}
+
+.links a {
+  padding: 0 7px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.links:has(a:hover) a:not(:hover) {
+  opacity: 0.3;
+}
+
+.legal {
+  margin: 0;
+  font-size: 12px;
+  color: #88abeb;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  padding-bottom: 100px;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 30px;
+}
