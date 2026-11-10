@@ -1,8 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-
-/* ==========================================
-   RESET
-========================================== */
+/* =========================================
+   RESET & GLOBAL STYLES
+========================================= */
 
 *,
 *::before,
@@ -12,118 +10,309 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  height: 100vh;
-  color: #dedfed;
-  background: linear-gradient(#15203a, #121418);
-  font-family: "Euclid Circular A", "Poppins", sans-serif;
+:root {
+  --background: #121827;
+  --text: #dedfed;
+  --muted: #8994ad;
+  --primary: #3b82f6;
+  --secondary: #8b5cf6;
 }
 
-.background {
-  position: absolute;
-  right: 0;
-  left: 50%;
-  bottom: 0;
-  translate: -50% 0;
-  z-index: -1;
-  width: 150vw;
-  height: 400px;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  color: var(--text);
+  background: linear-gradient(135deg, #15203a, #121418);
+
+  font-family: "Poppins", sans-serif;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  margin-top: auto;
+  padding: 100px 20px 35px;
   overflow: hidden;
 }
 
-.svg {
-  position: absolute;
-  bottom: 0;
+.footer-content {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   width: 100%;
-  height: 100%;
-  pointer-events: none;
-  transform: scale(2.5);
-  transform-origin: bottom;
+  gap: 30px;
 }
 
-ul {
+/* =========================================
+   SVG BACKGROUND
+========================================= */
+
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.background-svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+}
+
+/* =========================================
+   SOCIAL ICONS
+========================================= */
+
+.socials {
   display: flex;
-  margin: 0;
-  padding: 0;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+
   list-style: none;
 }
 
-.socials {
-  gap: 10px;
-}
-
 .socials a {
-  display: grid;
-  width: 400px;
-  height: 400px;
-  align-items: center;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: scale 0.25s;
-  font-size: 24px;
   position: relative;
-  background: rgb(11 89 255 / 26%);
-  backdrop-filter: blur(10px);
+
+  display: grid;
+  place-items: center;
+
+  width: 48px;
+  height: 48px;
+
+  color: #dbeafe;
+  font-size: 22px;
+
+  text-decoration: none;
+
+  background: rgb(37 99 235 / 12%);
+  border: 1px solid rgb(147 197 253 / 15%);
+  border-radius: 50%;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .socials a:hover {
-  scale: 1 1;
+  transform: translateY(-6px);
+
+  color: #ffffff;
+  background: rgb(59 130 246 / 30%);
+  border-color: rgb(147 197 253 / 45%);
+
+  box-shadow: 0 8px 25px rgb(37 99 235 / 20%);
 }
+
+/* Tooltip */
 
 .socials a::after {
   content: attr(data-tooltip);
+
   position: absolute;
   left: 50%;
-  bottom: calc(100% + 10px);
-  translate: -50% 6px;
-  opacity: 0;
-  line-height: 1;
-  font-size: 12px;
+  bottom: calc(100% + 12px);
+
+  transform: translate(-50%, 6px);
+
+  padding: 6px 11px;
+
   color: #eceefc;
-  padding: 6px 10px;
-  border-radius: 8px;
+  background: rgb(8 11 18 / 95%);
+
+  border: 1px solid rgb(255 255 255 / 8%);
+  border-radius: 6px;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 500;
+
   white-space: nowrap;
   pointer-events: none;
-  font-family: inherit;
-  background: rgb(8 11 18 / 94%);
-  transition: opacity 0.25s translate 0.25s;
+
+  opacity: 0;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 
-.socials a:hover {
+.socials a:hover::after,
+.socials a:focus-visible::after {
   opacity: 1;
-  translate: -50% 0;
+  transform: translate(-50%, 0);
+}
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
+
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 28px;
+
+  list-style: none;
 }
 
 .links a {
-  padding: 0 7px;
-  cursor: pointer;
-  transition: opacity 0.3s;
+  position: relative;
+
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease;
 }
+
+/* Underline animation */
+
+.links a::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+
+  width: 0;
+  height: 2px;
+
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+
+  border-radius: 10px;
+
+  transition: width 0.3s ease;
+}
+
+.links a:hover {
+  color: #93c5fd;
+}
+
+.links a:hover::after {
+  width: 100%;
+}
+
+/* Subtle focus effect */
 
 .links:has(a:hover) a:not(:hover) {
-  opacity: 0.3;
+  opacity: 0.45;
 }
+
+/* =========================================
+   COPYRIGHT
+========================================= */
 
 .legal {
-  margin: 0;
+  color: var(--muted);
   font-size: 12px;
-  color: #88abeb;
+  text-align: center;
+  line-height: 1.8;
 }
 
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  display: flex;
-  padding-bottom: 100px;
+.brand {
+  color: #93c5fd;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: color 0.3s ease;
 }
 
-section {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  gap: 30px;
+.brand:hover {
+  color: #ffffff;
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+a:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 5px;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 75px 16px 25px;
+  }
+
+  .footer-content {
+    gap: 25px;
+  }
+
+  .socials {
+    gap: 12px;
+  }
+
+  .socials a {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+  }
+
+  .links {
+    gap: 18px;
+  }
+
+  .links a {
+    font-size: 12px;
+  }
+
+  .legal {
+    font-size: 11px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
