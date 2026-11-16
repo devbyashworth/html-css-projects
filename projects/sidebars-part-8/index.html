@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebar</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Phosphor Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <input type="checkbox" id="theme" class="theme-toggle" />
+    <div class="page">
+      <aside class="sidebar">
+        <div class="brand">
+          <img src="" alt="" class="logo" />
+          <span class="brand-text">
+            <span class="brand-name">Student Admin</span>
+            <span class="brand-sub">Calvin Keen</span>
+          </span>
+          <i class="brand-chevron" data-lucide="chevrons-up-down"></i>
+        </div>
+        <div class="search">
+          <i data-lucide="search"></i>
+          <input type="text" name="" id="" placeholder="Search...." />
+        </div>
+        <p class="section-label">Pages</p>
+        <ul class="nav">
+          <li>
+            <input
+              type="radio"
+              name="nav"
+              id="nav-dashboard"
+              class="nav-radio"
+              checked
+            />
+            <label for="nav-dashboard">
+              <span class="icon-wrap">
+                <i data-lucide="layout-grid"></i>
+              </span>
+              <p>Dashboard</p>
+            </label>
+          </li>
+          <li>
+            <input type="radio" name="nav" id="nav-student" class="nav-radio" />
+            <label for="nav-student">
+              <span class="icon-wrap">
+                <i data-lucide="student"></i>
+              </span>
+              <p>Students</p>
+            </label>
+          </li>
+          <li>
+            <input type="radio" name="nav" id="nav-techer" class="nav-radio" />
+            <label for="nav-techer">
+              <span class="icon-wrap">
+                <i data-lucide="techer"></i>
+              </span>
+              <p>Techers</p>
+            </label>
+          </li>
+          <li>
+            <input type="radio" name="nav" id="nav-parent" class="nav-radio" />
+            <label for="nav-parent">
+              <span class="icon-wrap">
+                <i data-lucide="parent"></i>
+              </span>
+              <p>Parents</p>
+            </label>
+          </li>
+          <li>
+            <input type="radio" name="nav" id="nav-library" class="nav-radio" />
+            <label for="nav-library">
+              <span class="icon-wrap">
+                <i data-lucide="library"></i>
+              </span>
+              <p>Library</p>
+            </label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="nav"
+              id="nav-attendance"
+              class="nav-radio"
+            />
+            <label for="nav-attendance">
+              <span class="icon-wrap">
+                <i data-lucide="attendance"></i>
+              </span>
+              <p>Attendance</p>
+            </label>
+          </li>
+        </ul>
+        <p class="section-label">Account</p>
+
+        <ul>
+          <li>
+            <input
+              type="radio"
+              name="nav"
+              id="nav-help"
+              class="nav-radio"
+              disabled
+            />
+            <label for="nav-help">
+              <span class="icon-wrap">
+                <i data-lucide="help"></i>
+              </span>
+              <p>Help Line</p>
+            </label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="nav"
+              id="nav-settings"
+              class="nav-radio"
+              disabled
+            />
+            <label for="nav-settings">
+              <span class="icon-wrap">
+                <i data-lucide="settings"></i>
+              </span>
+              <p>Settings</p>
+            </label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="nav"
+              id="nav-logout"
+              class="nav-radio"
+              disabled
+            />
+            <label for="nav-logout">
+              <span class="icon-wrap">
+                <i data-lucide="logout"></i>
+              </span>
+              <p>Log Out</p>
+            </label>
+          </li>
+        </ul>
+        <p class="section-label">Connections</p>
+        <div class="avator">
+          <img src="" alt="" />
+          <img src="" alt="" />
+          <img src="" alt="" />
+          <img src="" alt="" />
+          <img src="" alt="" />
+        </div>
+        <label for="theme" class="theme-switch">
+          <span class="switch"></span>
+          <p>Dark Mode</p>
+        </label>
+      </aside>
+    </div>
+  </body>
+</html>
